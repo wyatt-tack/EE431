@@ -1,0 +1,77 @@
+* NGSPICE file created from pwm.ext - technology: sky130A
+
+.subckt magic_nand A B Y VDD VSS
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X1 Y B a_100_n230# VSS sky130_fd_pr__nfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+X2 a_100_n230# A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X3 VDD B Y VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+.ends
+
+.subckt magic_inv X Y VDD VSS
+X0 Y X VDD VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=36000,980
+X1 Y X VSS VSS sky130_fd_pr__nfet_01v8 ad=0.45 pd=2.9 as=0.45 ps=2.9 w=1 l=0.5
+**devattr s=18000,580 d=18000,580
+.ends
+
+.subckt magic_dff D clk Q notQ VDD VSS
+Xmagic_nand_0 magic_nand_3/Y notQ Q VDD VSS magic_nand
+Xmagic_nand_1 Q magic_nand_2/Y notQ VDD VSS magic_nand
+Xmagic_nand_2 magic_inv_0/Y clk magic_nand_2/Y VDD VSS magic_nand
+Xmagic_nand_3 clk D magic_nand_3/Y VDD VSS magic_nand
+Xmagic_inv_0 D magic_inv_0/Y VDD VSS magic_inv
+.ends
+
+.subckt magic_xnor A B Y VDD VSS
+Xmagic_nand_0 magic_nand_1/Y magic_nand_2/Y Y VDD VSS magic_nand
+Xmagic_nand_1 A B magic_nand_1/Y VDD VSS magic_nand
+Xmagic_nand_2 magic_inv_0/Y magic_inv_1/Y magic_nand_2/Y VDD VSS magic_nand
+Xmagic_inv_0 B magic_inv_0/Y VDD VSS magic_inv
+Xmagic_inv_1 A magic_inv_1/Y VDD VSS magic_inv
+.ends
+
+.subckt magic_and A B Y VDD VSS
+Xmagic_nand_0 A B magic_inv_0/X VDD VSS magic_nand
+Xmagic_inv_0 magic_inv_0/X Y VDD VSS magic_inv
+.ends
+
+.subckt magic_comp A0 A1 A2 A3 B0 B1 B2 B3 Y VDD VSS
+Xmagic_xnor_0 B0 A0 magic_and_0/B VDD VSS magic_xnor
+Xmagic_xnor_1 B1 A1 magic_and_0/A VDD VSS magic_xnor
+Xmagic_xnor_2 B2 A2 magic_and_1/A VDD VSS magic_xnor
+Xmagic_xnor_3 B3 A3 magic_and_2/A VDD VSS magic_xnor
+Xmagic_and_0 magic_and_0/A magic_and_0/B magic_and_1/B VDD VSS magic_and
+Xmagic_and_1 magic_and_1/A magic_and_1/B magic_and_2/B VDD VSS magic_and
+Xmagic_and_2 magic_and_2/A magic_and_2/B Y VDD VSS magic_and
+.ends
+
+.subckt magic_etdff D clk Q notQ VDD VSS
+Xmagic_dff_0 D magic_inv_1/X magic_dff_1/D magic_dff_0/notQ VDD VSS magic_dff
+Xmagic_dff_1 magic_dff_1/D magic_inv_1/Y Q notQ VDD VSS magic_dff
+Xmagic_inv_0 clk magic_inv_1/X VDD VSS magic_inv
+Xmagic_inv_1 magic_inv_1/X magic_inv_1/Y VDD VSS magic_inv
+.ends
+
+.subckt magic_counter clk S0 S1 S2 S3 VDD VSS
+Xmagic_etdff_0 magic_etdff_0/D clk S0 magic_etdff_0/D VDD VSS magic_etdff
+Xmagic_etdff_1 magic_etdff_1/D S0 S1 magic_etdff_1/D VDD VSS magic_etdff
+Xmagic_etdff_2 magic_etdff_2/D S1 S2 magic_etdff_2/D VDD VSS magic_etdff
+Xmagic_etdff_3 magic_etdff_3/D S2 S3 magic_etdff_3/D VDD VSS magic_etdff
+.ends
+
+.subckt pwm clk S0 S1 S2 S3 PWM VDD VSS
+Xmagic_nand_0 magic_nand_0/A magic_nand_0/B magic_nand_1/A VDD VSS magic_nand
+Xmagic_nand_1 magic_nand_1/A magic_dff_0/Q magic_nand_1/Y VDD VSS magic_nand
+Xmagic_dff_0 clk magic_comp_0/Y magic_dff_0/Q magic_dff_0/notQ VDD VSS magic_dff
+Xmagic_comp_0 magic_comp_0/A0 magic_comp_0/A1 magic_comp_0/A2 magic_nand_0/A S0 S1
++ S2 S3 magic_comp_0/Y VDD VSS magic_comp
+Xmagic_etdff_0 magic_nand_0/A clk magic_etdff_0/Q magic_nand_0/B VDD VSS magic_etdff
+Xmagic_etdff_1 magic_etdff_1/D magic_nand_1/Y PWM magic_etdff_1/D VDD VSS magic_etdff
+Xmagic_counter_0 clk magic_comp_0/A0 magic_comp_0/A1 magic_comp_0/A2 magic_nand_0/A
++ VDD VSS magic_counter
+.ends
+

@@ -1,0 +1,5 @@
+** comp.cir
+.include comp.spice
+Xcomp VDD A3 A1 A0 A2 B3 B2 B1 B0 Y VSS comp 
+.end
+

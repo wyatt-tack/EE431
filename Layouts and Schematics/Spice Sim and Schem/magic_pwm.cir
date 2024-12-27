@@ -1,0 +1,5 @@
+** magic_pwm.cir
+.include pwm.spice
+Xpwm clk S0 S1 S2 S3 PWM VDD VSS pwm
+.end
+

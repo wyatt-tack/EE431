@@ -1,0 +1,18 @@
+** sch_path: /home/wyatt/EE431/nandtest.sch
+**.subckt nandtest
+V1 A GND pulse(0 1.8 5n 0.1n 0.1n 5n 10n)
+V2 net1 GND 1.8
+x1 net1 A Y B GND nand
+V3 B GND pulse(0 1.8 5n 0.1n 0.1n 10n 20n)
+**** begin user architecture code
+ .lib /home/wyatt/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+.tran 1n 40n
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end

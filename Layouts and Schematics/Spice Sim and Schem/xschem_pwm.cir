@@ -1,0 +1,6 @@
+** xschem_pwm.cir
+.include xschem_pwm.spice
+
+Xpwm VDD VSS PWM clk S3 S2 S1 S0 xschem_pwm
+.end
+

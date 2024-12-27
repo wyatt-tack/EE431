@@ -1,0 +1,5 @@
+** dff_magic.cir
+.include magic_dff.spice
+Xdff D clk Q notQ VDD VSS magic_dff
+.end
+

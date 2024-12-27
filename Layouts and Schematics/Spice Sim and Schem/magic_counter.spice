@@ -1,0 +1,426 @@
+* NGSPICE file created from magic_counter.ext - technology: sky130A
+
+.subckt magic_nand A B Y VDD VSS a_100_n230#
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X1 Y B a_100_n230# VSS sky130_fd_pr__nfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+X2 a_100_n230# A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X3 VDD B Y VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+C0 a_100_n230# VDD 0.002196f
+C1 B VDD 0.118732f
+C2 Y a_100_n230# 0.017664f
+C3 A VDD 0.202433f
+C4 Y B 0.253425f
+C5 Y A 0.09013f
+C6 a_100_n230# B 0.014208f
+C7 A B 0.21018f
+C8 Y VDD 0.207993f
+C9 Y VSS 0.271727f
+C10 B VSS 0.476474f
+C11 A VSS 0.453547f
+C12 VDD VSS 1.23585f
+C13 a_100_n230# VSS 0.028228f
+.ends
+
+.subckt magic_inv X Y VDD VSS
+X0 Y X VDD VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=36000,980
+X1 Y X VSS VSS sky130_fd_pr__nfet_01v8 ad=0.45 pd=2.9 as=0.45 ps=2.9 w=1 l=0.5
+**devattr s=18000,580 d=18000,580
+C0 Y X 0.105971f
+C1 Y VDD 0.10691f
+C2 VDD X 0.197978f
+C3 Y VSS 0.267668f
+C4 X VSS 0.481952f
+C5 VDD VSS 0.843976f
+.ends
+
+.subckt magic_dff clk Q magic_nand_2/Y magic_nand_3/Y notQ magic_nand_1/a_100_n230#
++ magic_nand_2/a_100_n230# magic_inv_0/Y D VDD VSS
+Xmagic_nand_0 magic_nand_3/Y notQ Q VDD VSS magic_nand_0/a_100_n230# magic_nand
+Xmagic_nand_1 Q magic_nand_2/Y notQ VDD VSS magic_nand_1/a_100_n230# magic_nand
+Xmagic_nand_2 magic_inv_0/Y clk magic_nand_2/Y VDD VSS magic_nand_2/a_100_n230# magic_nand
+Xmagic_nand_3 clk D magic_nand_3/Y VDD VSS magic_nand_3/a_100_n230# magic_nand
+Xmagic_inv_0 D magic_inv_0/Y VDD VSS magic_inv
+C0 clk VDD 0.276198f
+C1 D magic_nand_3/a_100_n230# 6.62e-20
+C2 magic_nand_2/Y VDD 0.013097f
+C3 Q VDD 0.780984f
+C4 D magic_inv_0/Y 0.025042f
+C5 notQ clk 6.78e-19
+C6 clk magic_nand_3/Y 5.03e-19
+C7 magic_nand_3/a_100_n230# clk 9.29e-20
+C8 D clk 0.512204f
+C9 magic_nand_0/a_100_n230# VDD 0.009399f
+C10 magic_nand_2/Y magic_nand_3/Y 0.003303f
+C11 notQ magic_nand_2/Y 0.027101f
+C12 Q notQ 0.204136f
+C13 Q magic_nand_3/Y 0.011129f
+C14 magic_nand_3/a_100_n230# magic_nand_2/Y 0.003027f
+C15 D magic_nand_2/Y 0.005584f
+C16 Q D 3.91e-19
+C17 notQ VDD 0.444233f
+C18 VDD magic_nand_3/Y 0.06714f
+C19 clk magic_inv_0/Y 0.126572f
+C20 magic_nand_3/a_100_n230# VDD 0.007823f
+C21 D VDD 0.282719f
+C22 clk magic_nand_2/a_100_n230# 3.18e-19
+C23 magic_nand_2/Y magic_inv_0/Y 0.005014f
+C24 magic_nand_0/a_100_n230# notQ 0.008218f
+C25 Q magic_inv_0/Y 3.16e-19
+C26 magic_nand_2/Y clk 0.005838f
+C27 Q clk 0.022129f
+C28 magic_nand_1/a_100_n230# magic_nand_2/Y 1.53e-19
+C29 magic_inv_0/Y VDD 0.082291f
+C30 notQ magic_nand_3/Y 0.112791f
+C31 Q magic_nand_2/Y 0.070054f
+C32 D notQ 0.004634f
+C33 D magic_nand_3/Y 0.013145f
+C34 VDD VSS 6.870138f
+C35 D VSS 1.396145f
+C36 magic_nand_3/Y VSS 0.626503f
+C37 magic_nand_3/a_100_n230# VSS 0.028228f
+C38 magic_nand_2/Y VSS 0.830572f
+C39 clk VSS 3.249527f
+C40 magic_inv_0/Y VSS 0.560832f
+C41 magic_nand_2/a_100_n230# VSS 0.040303f
+C42 Q VSS 1.533211f
+C43 magic_nand_1/a_100_n230# VSS 0.034833f
+C44 notQ VSS 1.445663f
+C45 magic_nand_0/a_100_n230# VSS 0.028228f
+.ends
+
+.subckt magic_etdff clk magic_dff_1/magic_nand_1/a_100_n230# magic_dff_0/magic_nand_3/Y
++ magic_dff_1/magic_nand_2/a_100_n230# magic_dff_0/magic_inv_0/Y magic_dff_1/magic_nand_3/Y
++ notQ magic_inv_1/Y magic_dff_1/magic_inv_0/Y magic_dff_0/magic_nand_2/Y magic_dff_1/D
++ magic_inv_1/X magic_dff_0/notQ D magic_dff_1/magic_nand_2/Y VDD Q VSS
+Xmagic_dff_0 magic_inv_1/X magic_dff_1/D magic_dff_0/magic_nand_2/Y magic_dff_0/magic_nand_3/Y
++ magic_dff_0/notQ magic_dff_0/magic_nand_1/a_100_n230# magic_dff_0/magic_nand_2/a_100_n230#
++ magic_dff_0/magic_inv_0/Y D VDD VSS magic_dff
+Xmagic_dff_1 magic_inv_1/Y Q magic_dff_1/magic_nand_2/Y magic_dff_1/magic_nand_3/Y
++ notQ magic_dff_1/magic_nand_1/a_100_n230# magic_dff_1/magic_nand_2/a_100_n230# magic_dff_1/magic_inv_0/Y
++ magic_dff_1/D VDD VSS magic_dff
+Xmagic_inv_0 clk magic_inv_1/X VDD VSS magic_inv
+Xmagic_inv_1 magic_inv_1/X magic_inv_1/Y VDD VSS magic_inv
+C0 magic_inv_1/Y magic_dff_0/magic_nand_3/Y 1.59e-19
+C1 magic_dff_0/magic_nand_3/Y magic_inv_1/X 0.002282f
+C2 magic_dff_0/magic_nand_2/Y magic_inv_1/Y 0.061361f
+C3 magic_inv_1/Y magic_dff_0/magic_nand_1/a_100_n230# 0.008718f
+C4 magic_inv_1/Y magic_dff_0/notQ 0.083427f
+C5 VDD notQ 1.06e-19
+C6 D magic_inv_1/Y 0.084411f
+C7 magic_dff_1/magic_nand_3/Y magic_dff_1/D 0.001872f
+C8 VDD magic_inv_1/Y 0.062853f
+C9 D magic_inv_1/X 0.100784f
+C10 magic_dff_1/magic_inv_0/Y magic_dff_0/magic_nand_2/Y 4.14e-19
+C11 VDD magic_inv_1/X 0.339081f
+C12 magic_dff_1/D magic_dff_0/magic_nand_3/Y 1.26e-19
+C13 magic_dff_1/magic_inv_0/Y magic_dff_0/notQ 0.003242f
+C14 magic_dff_1/D magic_dff_0/magic_nand_2/Y 1.04e-20
+C15 D clk 0.023212f
+C16 VDD clk 0.009114f
+C17 Q VDD 0.00382f
+C18 magic_dff_1/D magic_dff_0/notQ 0.08104f
+C19 VDD magic_dff_1/D 0.050093f
+C20 magic_inv_1/Y magic_inv_1/X 0.260754f
+C21 Q notQ 9.94e-19
+C22 magic_inv_1/X clk 0.021739f
+C23 magic_dff_1/magic_inv_0/Y magic_inv_1/Y 2.6e-20
+C24 magic_dff_1/D magic_inv_1/Y 0.082207f
+C25 magic_dff_1/magic_nand_3/Y magic_dff_0/notQ 6.01e-20
+C26 magic_dff_1/magic_nand_2/Y notQ 2.15e-19
+C27 magic_dff_1/magic_nand_3/Y VDD 2.12e-19
+C28 magic_dff_0/magic_inv_0/Y magic_inv_1/Y 0.017008f
+C29 VDD magic_dff_0/magic_nand_3/Y 7.84e-20
+C30 magic_dff_0/magic_nand_2/a_100_n230# magic_inv_1/Y 0.008718f
+C31 VDD magic_dff_0/notQ 7.2e-19
+C32 VDD D 0.123858f
+C33 magic_inv_1/X VSS 3.219988f
+C34 clk VSS 0.513302f
+C35 VDD VSS 14.160234f
+C36 magic_dff_1/D VSS 2.570121f
+C37 magic_dff_1/magic_nand_3/Y VSS 0.625399f
+C38 magic_dff_1/magic_nand_3/a_100_n230# VSS 0.028228f
+C39 magic_dff_1/magic_nand_2/Y VSS 0.670071f
+C40 magic_inv_1/Y VSS 4.860871f
+C41 magic_dff_1/magic_inv_0/Y VSS 0.538833f
+C42 magic_dff_1/magic_nand_2/a_100_n230# VSS 0.028228f
+C43 Q VSS 1.439376f
+C44 magic_dff_1/magic_nand_1/a_100_n230# VSS 0.028228f
+C45 notQ VSS 1.098129f
+C46 magic_dff_1/magic_nand_0/a_100_n230# VSS 0.028228f
+C47 D VSS 1.527642f
+C48 magic_dff_0/magic_nand_3/Y VSS 0.625399f
+C49 magic_dff_0/magic_nand_3/a_100_n230# VSS 0.028228f
+C50 magic_dff_0/magic_nand_2/Y VSS 0.66738f
+C51 magic_dff_0/magic_inv_0/Y VSS 0.539688f
+C52 magic_dff_0/magic_nand_2/a_100_n230# VSS 0.028578f
+C53 magic_dff_0/magic_nand_1/a_100_n230# VSS 0.029266f
+C54 magic_dff_0/notQ VSS 1.079399f
+C55 magic_dff_0/magic_nand_0/a_100_n230# VSS 0.028228f
+.ends
+
+.subckt magic_counter clk S0 S1 S2 S3 VDD VSS
+Xmagic_etdff_0 clk magic_etdff_0/magic_dff_1/magic_nand_1/a_100_n230# magic_etdff_0/magic_dff_0/magic_nand_3/Y
++ magic_etdff_0/magic_dff_1/magic_nand_2/a_100_n230# magic_etdff_0/magic_dff_0/magic_inv_0/Y
++ magic_etdff_0/magic_dff_1/magic_nand_3/Y magic_etdff_0/D magic_etdff_0/magic_inv_1/Y
++ magic_etdff_0/magic_dff_1/magic_inv_0/Y magic_etdff_0/magic_dff_0/magic_nand_2/Y
++ magic_etdff_0/magic_dff_1/D magic_etdff_0/magic_inv_1/X magic_etdff_0/magic_dff_0/notQ
++ magic_etdff_0/D magic_etdff_0/magic_dff_1/magic_nand_2/Y VDD S0 VSS magic_etdff
+Xmagic_etdff_1 S0 magic_etdff_1/magic_dff_1/magic_nand_1/a_100_n230# magic_etdff_1/magic_dff_0/magic_nand_3/Y
++ magic_etdff_1/magic_dff_1/magic_nand_2/a_100_n230# magic_etdff_1/magic_dff_0/magic_inv_0/Y
++ magic_etdff_1/magic_dff_1/magic_nand_3/Y magic_etdff_1/D magic_etdff_1/magic_inv_1/Y
++ magic_etdff_1/magic_dff_1/magic_inv_0/Y magic_etdff_1/magic_dff_0/magic_nand_2/Y
++ magic_etdff_1/magic_dff_1/D magic_etdff_1/magic_inv_1/X magic_etdff_1/magic_dff_0/notQ
++ magic_etdff_1/D magic_etdff_1/magic_dff_1/magic_nand_2/Y VDD S1 VSS magic_etdff
+Xmagic_etdff_2 S1 magic_etdff_2/magic_dff_1/magic_nand_1/a_100_n230# magic_etdff_2/magic_dff_0/magic_nand_3/Y
++ magic_etdff_2/magic_dff_1/magic_nand_2/a_100_n230# magic_etdff_2/magic_dff_0/magic_inv_0/Y
++ magic_etdff_2/magic_dff_1/magic_nand_3/Y magic_etdff_2/D magic_etdff_2/magic_inv_1/Y
++ magic_etdff_2/magic_dff_1/magic_inv_0/Y magic_etdff_2/magic_dff_0/magic_nand_2/Y
++ magic_etdff_2/magic_dff_1/D magic_etdff_2/magic_inv_1/X magic_etdff_2/magic_dff_0/notQ
++ magic_etdff_2/D magic_etdff_2/magic_dff_1/magic_nand_2/Y VDD S2 VSS magic_etdff
+Xmagic_etdff_3 S2 magic_etdff_3/magic_dff_1/magic_nand_1/a_100_n230# magic_etdff_3/magic_dff_0/magic_nand_3/Y
++ magic_etdff_3/magic_dff_1/magic_nand_2/a_100_n230# magic_etdff_3/magic_dff_0/magic_inv_0/Y
++ magic_etdff_3/magic_dff_1/magic_nand_3/Y magic_etdff_3/D magic_etdff_3/magic_inv_1/Y
++ magic_etdff_3/magic_dff_1/magic_inv_0/Y magic_etdff_3/magic_dff_0/magic_nand_2/Y
++ magic_etdff_3/magic_dff_1/D magic_etdff_3/magic_inv_1/X magic_etdff_3/magic_dff_0/notQ
++ magic_etdff_3/D magic_etdff_3/magic_dff_1/magic_nand_2/Y VDD S3 VSS magic_etdff
+C0 magic_etdff_0/D magic_etdff_2/D 0.001606f
+C1 magic_etdff_0/D S2 1.25e-19
+C2 S1 magic_etdff_3/magic_dff_1/D 0.014319f
+C3 magic_etdff_0/D magic_etdff_2/magic_dff_1/magic_nand_3/Y 8.85e-19
+C4 S3 VDD 0.008632f
+C5 magic_etdff_0/magic_dff_1/D magic_etdff_2/magic_dff_0/notQ 6.32e-21
+C6 magic_etdff_2/magic_dff_1/magic_nand_2/Y magic_etdff_3/magic_inv_1/Y 4.25e-20
+C7 magic_etdff_2/magic_inv_1/Y magic_etdff_0/magic_inv_1/Y 0.001407f
+C8 magic_etdff_2/D magic_etdff_3/D 0.125665f
+C9 S2 magic_etdff_3/D 0.075506f
+C10 magic_etdff_0/D magic_etdff_0/magic_dff_0/magic_inv_0/Y 8.75e-19
+C11 magic_etdff_2/D magic_etdff_2/magic_dff_1/magic_nand_2/a_100_n230# 0.005219f
+C12 magic_etdff_0/magic_inv_1/Y magic_etdff_2/magic_inv_1/X 0.001067f
+C13 magic_etdff_3/D magic_etdff_2/magic_dff_1/magic_nand_3/Y 8.1e-20
+C14 magic_etdff_2/D magic_etdff_0/magic_dff_1/magic_nand_2/Y 0.003478f
+C15 VDD magic_etdff_0/magic_inv_1/Y 4.4e-19
+C16 magic_etdff_3/magic_dff_0/magic_nand_2/Y S2 4.7e-20
+C17 magic_etdff_0/magic_dff_1/magic_nand_2/Y magic_etdff_2/magic_dff_1/magic_nand_3/Y 2.01e-20
+C18 magic_etdff_0/D magic_etdff_1/D 0.116931f
+C19 magic_etdff_2/D magic_etdff_2/magic_dff_0/magic_inv_0/Y 8.18e-19
+C20 magic_etdff_1/magic_dff_1/magic_nand_1/a_100_n230# magic_etdff_1/D 0.00545f
+C21 magic_etdff_3/D magic_etdff_3/magic_dff_0/magic_inv_0/Y 8.18e-19
+C22 S1 magic_etdff_3/magic_inv_1/X 0.023214f
+C23 magic_etdff_0/D magic_etdff_0/magic_inv_1/X 0.027479f
+C24 magic_etdff_2/magic_inv_1/Y VDD 1.5e-19
+C25 magic_etdff_0/D magic_etdff_0/magic_dff_0/magic_nand_2/Y 8.03e-19
+C26 magic_etdff_0/magic_dff_1/magic_nand_3/Y magic_etdff_1/D 7.72e-20
+C27 S2 magic_etdff_3/magic_dff_1/D 0.047908f
+C28 VDD magic_etdff_2/magic_inv_1/X 1.57e-19
+C29 S1 magic_etdff_3/magic_inv_1/Y 0.015351f
+C30 magic_etdff_0/D magic_etdff_2/magic_dff_1/D 9.28e-19
+C31 magic_etdff_2/D magic_etdff_2/magic_dff_1/magic_nand_2/Y 0.035472f
+C32 S0 magic_etdff_1/magic_dff_1/magic_nand_3/Y 1.75e-19
+C33 magic_etdff_0/D magic_etdff_2/magic_dff_0/magic_nand_3/Y 8.85e-19
+C34 magic_etdff_3/magic_dff_1/magic_nand_2/Y magic_etdff_3/D 0.035472f
+C35 magic_etdff_2/magic_inv_1/Y magic_etdff_0/magic_dff_1/magic_inv_0/Y 0.004524f
+C36 VDD magic_etdff_0/magic_dff_1/magic_inv_0/Y 0.001022f
+C37 S1 magic_etdff_2/magic_dff_0/notQ 0.002567f
+C38 magic_etdff_0/D S0 0.025107f
+C39 magic_etdff_2/D magic_etdff_3/magic_inv_1/X 0.001672f
+C40 magic_etdff_1/magic_inv_1/X magic_etdff_1/D 0.027773f
+C41 S2 magic_etdff_3/magic_inv_1/X 0.08124f
+C42 magic_etdff_2/D magic_etdff_2/magic_dff_0/magic_nand_2/Y 7.48e-19
+C43 magic_etdff_0/magic_dff_1/D magic_etdff_2/magic_dff_0/magic_nand_3/Y 0.004383f
+C44 S0 magic_etdff_0/magic_dff_1/magic_nand_3/Y 1.14e-19
+C45 magic_etdff_0/D magic_etdff_0/magic_dff_1/magic_nand_1/a_100_n230# 0.00545f
+C46 S2 magic_etdff_3/magic_inv_1/Y 0.058461f
+C47 magic_etdff_2/D S1 0.0064f
+C48 S0 magic_etdff_0/magic_dff_1/magic_nand_2/Y 0.008298f
+C49 S1 S2 0.724876f
+C50 S1 magic_etdff_2/magic_dff_1/magic_nand_3/Y 0.016845f
+C51 S3 magic_etdff_3/D 0.007057f
+C52 magic_etdff_0/D magic_etdff_0/magic_inv_1/Y 1.006191f
+C53 magic_etdff_1/magic_dff_1/magic_nand_2/a_100_n230# magic_etdff_1/D 0.00545f
+C54 magic_etdff_1/magic_dff_0/magic_nand_2/Y magic_etdff_1/D 3.07e-19
+C55 magic_etdff_1/magic_dff_1/D magic_etdff_1/D 5.21e-19
+C56 S1 magic_etdff_0/magic_dff_0/magic_inv_0/Y 4.78e-19
+C57 magic_etdff_0/D magic_etdff_2/magic_inv_1/Y 0.001608f
+C58 S1 magic_etdff_1/D 2.325321f
+C59 S0 magic_etdff_1/magic_inv_1/X 0.082068f
+C60 magic_etdff_0/D magic_etdff_2/magic_inv_1/X 0.003931f
+C61 magic_etdff_0/D VDD 0.194434f
+C62 S1 magic_etdff_0/magic_inv_1/X 0.003922f
+C63 S1 magic_etdff_0/magic_dff_0/magic_nand_2/Y 4.27e-19
+C64 magic_etdff_1/magic_dff_1/magic_nand_1/a_100_n230# VDD 0.004571f
+C65 magic_etdff_2/D S2 0.012523f
+C66 S1 magic_etdff_1/magic_dff_1/magic_nand_2/Y 9.55e-19
+C67 S2 magic_etdff_2/magic_dff_1/magic_nand_3/Y 1.13e-19
+C68 VDD magic_etdff_3/D 0.089509f
+C69 magic_etdff_0/magic_dff_1/D magic_etdff_2/magic_inv_1/Y 0.001585f
+C70 S1 magic_etdff_2/magic_dff_1/D 0.0163f
+C71 VDD magic_etdff_0/magic_dff_1/magic_nand_2/Y 3.84e-19
+C72 magic_etdff_0/D magic_etdff_0/magic_dff_1/magic_inv_0/Y 0.006291f
+C73 S1 magic_etdff_2/magic_dff_0/magic_nand_3/Y 0.016845f
+C74 magic_etdff_0/magic_dff_1/D VDD 0.002781f
+C75 magic_etdff_0/magic_dff_0/magic_nand_2/Y magic_etdff_2/magic_dff_0/notQ 0.003478f
+C76 S0 magic_etdff_1/magic_dff_0/magic_nand_2/Y 0.009909f
+C77 magic_etdff_1/magic_dff_1/D S0 0.020262f
+C78 S1 S0 0.711168f
+C79 magic_etdff_2/D magic_etdff_0/magic_inv_1/X 0.003478f
+C80 magic_etdff_1/magic_inv_1/Y magic_etdff_1/D 1.00689f
+C81 S1 S3 0.017244f
+C82 VDD magic_etdff_1/magic_inv_1/X 0.003295f
+C83 S1 magic_etdff_3/magic_dff_0/magic_nand_3/Y 0.014898f
+C84 magic_etdff_2/D magic_etdff_2/magic_dff_1/magic_nand_1/a_100_n230# 0.005219f
+C85 VDD magic_etdff_2/magic_dff_1/magic_nand_2/Y 4.92e-19
+C86 magic_etdff_3/magic_dff_1/magic_nand_2/Y S2 4.7e-20
+C87 magic_etdff_2/D magic_etdff_2/magic_dff_1/D 0.001336f
+C88 S1 magic_etdff_0/magic_inv_1/Y 4.85e-19
+C89 S0 magic_etdff_1/magic_dff_0/notQ 0.002477f
+C90 S0 magic_etdff_1/magic_dff_0/magic_nand_3/Y 2.66e-21
+C91 VDD magic_etdff_3/magic_inv_1/X 0.006701f
+C92 magic_etdff_1/magic_dff_1/magic_nand_2/Y magic_etdff_1/D 0.036395f
+C93 magic_etdff_2/D S0 6.32e-21
+C94 S2 S0 1.20837f
+C95 S1 magic_etdff_2/magic_inv_1/Y 0.018275f
+C96 magic_etdff_0/magic_inv_1/Y magic_etdff_2/magic_dff_0/notQ 4.27e-19
+C97 S0 magic_etdff_2/magic_dff_1/magic_nand_3/Y 0.004383f
+C98 magic_etdff_1/magic_dff_0/magic_inv_0/Y magic_etdff_1/D 3.3e-19
+C99 S1 magic_etdff_2/magic_inv_1/X 0.030211f
+C100 S2 S3 0.020942f
+C101 magic_etdff_3/D magic_etdff_3/magic_dff_1/magic_nand_2/a_100_n230# 0.005219f
+C102 S1 VDD 1.363633f
+C103 S2 magic_etdff_3/magic_dff_0/magic_nand_3/Y 0.043724f
+C104 S0 magic_etdff_1/magic_inv_1/Y 0.086733f
+C105 magic_etdff_0/D magic_etdff_0/magic_dff_1/magic_nand_2/Y 0.036891f
+C106 VDD clk 0.002002f
+C107 magic_etdff_0/D magic_etdff_0/magic_dff_1/D 0.001408f
+C108 magic_etdff_0/magic_dff_0/magic_nand_2/Y magic_etdff_2/magic_dff_0/magic_nand_3/Y 2.01e-20
+C109 magic_etdff_2/D magic_etdff_0/magic_inv_1/Y 4.27e-19
+C110 S0 magic_etdff_1/D 1.02558f
+C111 S1 magic_etdff_3/magic_dff_1/magic_nand_3/Y 0.014898f
+C112 magic_etdff_0/D magic_etdff_0/magic_dff_1/magic_nand_2/a_100_n230# 0.00545f
+C113 magic_etdff_3/magic_dff_0/magic_nand_2/Y magic_etdff_3/D 7.48e-19
+C114 S1 magic_etdff_0/magic_dff_1/magic_inv_0/Y 4.78e-19
+C115 magic_etdff_2/D magic_etdff_2/magic_inv_1/Y 0.88731f
+C116 S0 magic_etdff_1/magic_dff_1/magic_nand_2/Y 0.020897f
+C117 magic_etdff_0/D magic_etdff_1/magic_inv_1/X 9.29e-20
+C118 magic_etdff_2/D magic_etdff_2/magic_inv_1/X 0.027311f
+C119 magic_etdff_2/D VDD 0.08532f
+C120 magic_etdff_1/magic_dff_1/magic_inv_0/Y magic_etdff_1/D 0.005753f
+C121 S2 VDD 1.12582f
+C122 magic_etdff_3/D magic_etdff_3/magic_dff_1/D 0.001336f
+C123 magic_etdff_1/magic_dff_0/magic_inv_0/Y S0 0.01029f
+C124 magic_etdff_3/D magic_etdff_2/magic_dff_1/magic_nand_2/Y 4.26e-19
+C125 S1 magic_etdff_3/magic_dff_0/notQ 7.31e-19
+C126 magic_etdff_0/magic_dff_0/magic_inv_0/Y magic_etdff_2/magic_inv_1/X 0.004524f
+C127 S2 magic_etdff_3/magic_dff_1/magic_nand_3/Y 0.043613f
+C128 VDD magic_etdff_0/magic_dff_0/magic_inv_0/Y 0.001022f
+C129 S1 magic_etdff_1/magic_dff_1/magic_nand_3/Y 1.43e-19
+C130 magic_etdff_3/D magic_etdff_3/magic_dff_1/magic_nand_1/a_100_n230# 0.005219f
+C131 magic_etdff_0/magic_inv_1/Y magic_etdff_2/magic_dff_1/D 0.003587f
+C132 VDD magic_etdff_1/D 0.304704f
+C133 S0 S3 3.6e-19
+C134 magic_etdff_0/magic_inv_1/Y magic_etdff_2/magic_dff_0/magic_nand_3/Y 4.9e-19
+C135 magic_etdff_3/D magic_etdff_3/magic_inv_1/X 0.027311f
+C136 magic_etdff_3/D magic_etdff_3/magic_dff_1/magic_inv_0/Y 0.005944f
+C137 magic_etdff_0/magic_inv_1/X magic_etdff_2/magic_inv_1/X 0.001257f
+C138 magic_etdff_0/D S1 1.913593f
+C139 VDD magic_etdff_0/magic_inv_1/X 0.001553f
+C140 VDD magic_etdff_0/magic_dff_0/magic_nand_2/Y 3.84e-19
+C141 VDD magic_etdff_1/magic_dff_1/magic_nand_2/Y 0.016199f
+C142 magic_etdff_3/D magic_etdff_3/magic_inv_1/Y 0.88731f
+C143 magic_etdff_1/magic_dff_1/magic_inv_0/Y S0 0.009868f
+C144 S1 magic_etdff_3/D 0.003187f
+C145 S2 magic_etdff_3/magic_dff_0/notQ 0.032829f
+C146 S1 magic_etdff_0/magic_dff_1/magic_nand_2/Y 4.27e-19
+C147 magic_etdff_0/D magic_etdff_2/magic_dff_0/notQ 8.03e-19
+C148 magic_etdff_0/magic_dff_1/D S1 8.88e-19
+C149 magic_etdff_2/D magic_etdff_2/magic_dff_1/magic_inv_0/Y 0.005944f
+C150 magic_etdff_2/magic_dff_1/magic_nand_2/Y magic_etdff_3/magic_inv_1/X 0.004704f
+C151 S0 VDD 0.375431f
+C152 magic_etdff_3/magic_inv_1/X VSS 3.119755f
+C153 magic_etdff_3/magic_dff_1/D VSS 2.55962f
+C154 magic_etdff_3/magic_dff_1/magic_nand_3/Y VSS 0.625399f
+C155 magic_etdff_3/magic_dff_1/magic_nand_3/a_100_n230# VSS 0.028228f
+C156 magic_etdff_3/magic_dff_1/magic_nand_2/Y VSS 0.662268f
+C157 magic_etdff_3/magic_inv_1/Y VSS 3.822167f
+C158 magic_etdff_3/magic_dff_1/magic_inv_0/Y VSS 0.535363f
+C159 magic_etdff_3/magic_dff_1/magic_nand_2/a_100_n230# VSS 0.028228f
+C160 S3 VSS 1.493193f
+C161 magic_etdff_3/magic_dff_1/magic_nand_1/a_100_n230# VSS 0.028228f
+C162 magic_etdff_3/magic_dff_1/magic_nand_0/a_100_n230# VSS 0.028228f
+C163 magic_etdff_3/D VSS 6.593878f
+C164 magic_etdff_3/magic_dff_0/magic_nand_3/Y VSS 0.625399f
+C165 magic_etdff_3/magic_dff_0/magic_nand_3/a_100_n230# VSS 0.028228f
+C166 magic_etdff_3/magic_dff_0/magic_nand_2/Y VSS 0.662029f
+C167 magic_etdff_3/magic_dff_0/magic_inv_0/Y VSS 0.53536f
+C168 magic_etdff_3/magic_dff_0/magic_nand_2/a_100_n230# VSS 0.028228f
+C169 magic_etdff_3/magic_dff_0/magic_nand_1/a_100_n230# VSS 0.028228f
+C170 magic_etdff_3/magic_dff_0/notQ VSS 1.07631f
+C171 magic_etdff_3/magic_dff_0/magic_nand_0/a_100_n230# VSS 0.028228f
+C172 magic_etdff_2/magic_inv_1/X VSS 3.130025f
+C173 magic_etdff_2/magic_dff_1/D VSS 2.561133f
+C174 magic_etdff_2/magic_dff_1/magic_nand_3/Y VSS 0.627189f
+C175 magic_etdff_2/magic_dff_1/magic_nand_3/a_100_n230# VSS 0.028228f
+C176 magic_etdff_2/magic_dff_1/magic_nand_2/Y VSS 0.670286f
+C177 magic_etdff_2/magic_inv_1/Y VSS 3.826767f
+C178 magic_etdff_2/magic_dff_1/magic_inv_0/Y VSS 0.535363f
+C179 magic_etdff_2/magic_dff_1/magic_nand_2/a_100_n230# VSS 0.028228f
+C180 S2 VSS 3.543593f
+C181 magic_etdff_2/magic_dff_1/magic_nand_1/a_100_n230# VSS 0.030804f
+C182 magic_etdff_2/magic_dff_1/magic_nand_0/a_100_n230# VSS 0.028228f
+C183 magic_etdff_2/D VSS 6.653334f
+C184 magic_etdff_2/magic_dff_0/magic_nand_3/Y VSS 0.626657f
+C185 magic_etdff_2/magic_dff_0/magic_nand_3/a_100_n230# VSS 0.028228f
+C186 magic_etdff_2/magic_dff_0/magic_nand_2/Y VSS 0.662029f
+C187 magic_etdff_2/magic_dff_0/magic_inv_0/Y VSS 0.53536f
+C188 magic_etdff_2/magic_dff_0/magic_nand_2/a_100_n230# VSS 0.028228f
+C189 magic_etdff_2/magic_dff_0/magic_nand_1/a_100_n230# VSS 0.028228f
+C190 magic_etdff_2/magic_dff_0/notQ VSS 1.077229f
+C191 magic_etdff_2/magic_dff_0/magic_nand_0/a_100_n230# VSS 0.028228f
+C192 magic_etdff_1/magic_inv_1/X VSS 3.117251f
+C193 VDD VSS 56.242584f
+C194 magic_etdff_1/magic_dff_1/D VSS 2.559354f
+C195 magic_etdff_1/magic_dff_1/magic_nand_3/Y VSS 0.625399f
+C196 magic_etdff_1/magic_dff_1/magic_nand_3/a_100_n230# VSS 0.028228f
+C197 magic_etdff_1/magic_dff_1/magic_nand_2/Y VSS 0.6619f
+C198 magic_etdff_1/magic_inv_1/Y VSS 3.796575f
+C199 magic_etdff_1/magic_dff_1/magic_inv_0/Y VSS 0.535219f
+C200 magic_etdff_1/magic_dff_1/magic_nand_2/a_100_n230# VSS 0.028228f
+C201 S1 VSS 2.82905f
+C202 magic_etdff_1/magic_dff_1/magic_nand_1/a_100_n230# VSS 0.028228f
+C203 magic_etdff_1/D VSS 4.68354f
+C204 magic_etdff_1/magic_dff_1/magic_nand_0/a_100_n230# VSS 0.028228f
+C205 magic_etdff_1/magic_dff_0/magic_nand_3/Y VSS 0.625399f
+C206 magic_etdff_1/magic_dff_0/magic_nand_3/a_100_n230# VSS 0.028228f
+C207 magic_etdff_1/magic_dff_0/magic_nand_2/Y VSS 0.6619f
+C208 magic_etdff_1/magic_dff_0/magic_inv_0/Y VSS 0.535212f
+C209 magic_etdff_1/magic_dff_0/magic_nand_2/a_100_n230# VSS 0.028228f
+C210 magic_etdff_1/magic_dff_0/magic_nand_1/a_100_n230# VSS 0.028228f
+C211 magic_etdff_1/magic_dff_0/notQ VSS 1.07631f
+C212 magic_etdff_1/magic_dff_0/magic_nand_0/a_100_n230# VSS 0.028228f
+C213 magic_etdff_0/magic_inv_1/X VSS 3.119415f
+C214 clk VSS 0.585955f
+C215 magic_etdff_0/magic_dff_1/D VSS 2.559354f
+C216 magic_etdff_0/magic_dff_1/magic_nand_3/Y VSS 0.625399f
+C217 magic_etdff_0/magic_dff_1/magic_nand_3/a_100_n230# VSS 0.028228f
+C218 magic_etdff_0/magic_dff_1/magic_nand_2/Y VSS 0.669589f
+C219 magic_etdff_0/magic_inv_1/Y VSS 3.797072f
+C220 magic_etdff_0/magic_dff_1/magic_inv_0/Y VSS 0.535219f
+C221 magic_etdff_0/magic_dff_1/magic_nand_2/a_100_n230# VSS 0.028228f
+C222 S0 VSS 5.25179f
+C223 magic_etdff_0/magic_dff_1/magic_nand_1/a_100_n230# VSS 0.030804f
+C224 magic_etdff_0/D VSS 5.347218f
+C225 magic_etdff_0/magic_dff_1/magic_nand_0/a_100_n230# VSS 0.028228f
+C226 magic_etdff_0/magic_dff_0/magic_nand_3/Y VSS 0.625399f
+C227 magic_etdff_0/magic_dff_0/magic_nand_3/a_100_n230# VSS 0.028228f
+C228 magic_etdff_0/magic_dff_0/magic_nand_2/Y VSS 0.6619f
+C229 magic_etdff_0/magic_dff_0/magic_inv_0/Y VSS 0.535215f
+C230 magic_etdff_0/magic_dff_0/magic_nand_2/a_100_n230# VSS 0.028228f
+C231 magic_etdff_0/magic_dff_0/magic_nand_1/a_100_n230# VSS 0.028228f
+C232 magic_etdff_0/magic_dff_0/notQ VSS 1.07631f
+C233 magic_etdff_0/magic_dff_0/magic_nand_0/a_100_n230# VSS 0.028228f
+.ends
+

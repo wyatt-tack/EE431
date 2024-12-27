@@ -1,0 +1,64 @@
+magic
+tech sky130A
+timestamp 1732138536
+<< nwell >>
+rect -920 -270 -420 -20
+<< poly >>
+rect -835 -20 -670 10
+rect -835 -40 -785 -20
+<< polycont >>
+rect -675 370 -655 390
+<< locali >>
+rect -1010 370 -940 400
+rect -725 390 -615 400
+rect -725 370 -675 390
+rect -655 370 -615 390
+rect 1520 370 1540 400
+rect 340 320 450 350
+rect -1010 115 -640 145
+rect -670 110 -640 115
+rect -740 -630 -710 -270
+rect 1520 -300 1540 -270
+rect 445 -630 475 -530
+rect -740 -660 475 -630
+<< metal1 >>
+rect -1010 620 -940 650
+rect -730 620 -620 650
+rect 385 620 450 650
+rect 1520 620 1540 650
+rect -990 175 -925 205
+rect -990 -580 -960 175
+rect -735 -50 -625 -20
+rect -725 -495 -615 -465
+rect -990 -650 1520 -580
+rect -1010 -680 1540 -650
+use magic_dff  magic_dff_0
+timestamp 1732136480
+transform 1 0 5 0 1 60
+box -695 -670 390 590
+use magic_dff  magic_dff_1
+timestamp 1732136480
+transform 1 0 1130 0 1 60
+box -695 -670 390 590
+use magic_inv  magic_inv_0
+timestamp 1729885934
+transform 1 0 -835 0 1 220
+box -105 -45 115 430
+use magic_inv  magic_inv_1
+timestamp 1729885934
+transform 1 0 -835 0 1 -450
+box -105 -45 115 430
+<< labels >>
+rlabel locali -1010 115 -990 145 7 D
+port 1 w
+rlabel locali -1010 370 -990 400 7 clk
+port 2 w
+rlabel locali 1520 370 1540 400 3 Q
+port 3 e
+rlabel locali 1520 -300 1540 -270 3 notQ
+port 4 e
+rlabel metal1 -1010 620 -990 650 7 VDD
+port 5 w
+rlabel metal1 -1010 -680 -990 -650 7 VSS
+port 6 w
+<< end >>

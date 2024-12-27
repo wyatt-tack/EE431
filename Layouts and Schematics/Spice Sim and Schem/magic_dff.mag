@@ -1,0 +1,99 @@
+magic
+tech sky130A
+timestamp 1732136480
+<< nwell >>
+rect -395 340 110 590
+rect -450 -330 -350 -80
+rect -130 -330 90 -80
+<< poly >>
+rect -685 330 -295 340
+rect -685 310 -680 330
+rect -660 310 -295 330
+rect -685 -415 -655 310
+rect 320 90 350 100
+rect 320 70 325 90
+rect 345 70 350 90
+rect 320 -45 350 70
+rect -40 -70 350 -45
+rect -40 -330 -10 -70
+rect -40 -360 120 -330
+rect -685 -435 -680 -415
+rect -660 -435 -655 -415
+rect -685 -445 -655 -435
+<< polycont >>
+rect -680 310 -660 330
+rect 325 70 345 90
+rect -680 -435 -660 -415
+<< locali >>
+rect -695 330 -305 340
+rect -695 310 -680 330
+rect -660 310 -305 330
+rect -80 310 30 340
+rect 300 310 390 340
+rect -695 260 -390 290
+rect -30 260 20 290
+rect -675 -360 -645 260
+rect -30 -30 0 260
+rect 320 90 350 310
+rect 320 70 325 90
+rect 345 70 350 90
+rect 320 60 350 70
+rect -30 -60 350 -30
+rect 320 -330 350 -60
+rect -440 -360 -365 -330
+rect 0 -360 20 -330
+rect 300 -360 390 -330
+rect -685 -415 -655 -405
+rect -685 -435 -680 -415
+rect -660 -435 -655 -415
+rect -685 -575 -655 -435
+rect -420 -575 -395 -380
+rect -100 -410 20 -380
+rect -685 -605 -395 -575
+<< metal1 >>
+rect -695 560 -385 590
+rect -80 560 390 590
+rect -445 -80 -415 560
+rect -80 0 320 30
+rect -445 -85 -390 -80
+rect -435 -110 -390 -85
+rect -425 -640 -395 -525
+rect -50 -640 -20 0
+rect 345 -80 370 560
+rect 0 -110 370 -80
+rect -695 -670 -395 -640
+rect -80 -670 390 -640
+use magic_inv  magic_inv_0 ~/EE431
+timestamp 1729885934
+transform 1 0 -540 0 1 -510
+box -105 -45 115 430
+use magic_nand  magic_nand_0 ~/EE431
+timestamp 1731535207
+transform 1 0 105 0 1 160
+box -105 -160 220 430
+use magic_nand  magic_nand_1
+timestamp 1731535207
+transform 1 0 105 0 1 -510
+box -105 -160 220 430
+use magic_nand  magic_nand_2
+timestamp 1731535207
+transform 1 0 -290 0 1 -510
+box -105 -160 220 430
+use magic_nand  magic_nand_3
+timestamp 1731535207
+transform 1 0 -290 0 1 160
+box -105 -160 220 430
+<< labels >>
+rlabel locali -695 310 -675 340 7 clk
+port 2 w
+rlabel locali -695 260 -675 290 7 D
+port 1 w
+rlabel locali 370 310 390 340 3 Q
+port 3 e
+rlabel locali 370 -360 390 -330 3 notQ
+port 4 e
+rlabel metal1 -695 560 -675 590 7 VDD
+port 5 w
+rlabel metal1 -695 -670 -675 -640 7 VSS
+port 6 w
+<< end >>

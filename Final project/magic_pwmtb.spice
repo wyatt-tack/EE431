@@ -1,0 +1,16 @@
+** magic_pwm.spice
+.include pwm.spice
+.lib /home/wyatt/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+V1 clk GND pulse(0 1.8 3n 0.1n 0.1n 10n 20n)
+V2 net1 GND 1.8
+V4 M2 GND pulse(0 1.8 0n 0.1n 0.1n 1280n 2560n)
+V3 M1 GND pulse(0 1.8 0n 0.1n 0.1n 640n 1280n)
+V5 M0 GND pulse(0 1.8 0n 0.1n 0.1n 320n 640n)
+V6 M3 GND pulse(0 1.8 0n 0.1n 0.1n 2560n 5120n)
+X1 clk M0 M1 M2 M3 PWM net1 GND pwm
+**** begin user architecture code
+
+.tran 1n 4800n
+.control
+run
+.endc

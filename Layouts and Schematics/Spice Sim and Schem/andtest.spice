@@ -1,0 +1,47 @@
+** sch_path: /home/wyatt/EE431/andtest.sch
+**.subckt andtest
+V1 A GND pulse(0 1.8 5n 0.1n 0.1n 5n 10n)
+V2 net1 GND 1.8
+V3 B GND pulse(0 1.8 5n 0.1n 0.1n 10n 20n)
+x1 net1 A Y B GND and
+**** begin user architecture code
+ .lib /home/wyatt/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+.tran 1n 40n
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  and.sym # of pins=5
+** sym_path: /home/wyatt/EE431/and.sym
+** sch_path: /home/wyatt/EE431/and.sch
+.subckt and VDD A Y B VSS
+*.opin Y
+*.ipin VSS
+*.ipin VDD
+*.ipin A
+*.ipin B
+x1 VDD net1 Y VSS inv
+x2 VDD A net1 B VSS nand
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/wyatt/EE431/inv.sym
+** sch_path: /home/wyatt/EE431/inv.sch
+.subckt inv VDD X Y GND
+*.ipin X
+*.iopin VDD
+*.iopin GND
+*.opin Y
+XM1 Y X GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y X VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.GLOBAL GND
+.end

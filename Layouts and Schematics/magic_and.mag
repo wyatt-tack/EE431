@@ -1,0 +1,31 @@
+magic
+tech sky130A
+timestamp 1731958742
+<< locali >>
+rect 0 310 20 340
+rect 520 310 540 340
+rect 0 260 20 290
+<< metal1 >>
+rect 0 560 20 590
+rect 0 0 20 30
+rect 320 0 350 115
+use magic_inv  magic_inv_0
+timestamp 1729885934
+transform 1 0 425 0 1 160
+box -105 -45 115 430
+use magic_nand  magic_nand_0
+timestamp 1731535207
+transform 1 0 105 0 1 160
+box -105 -160 220 430
+<< labels >>
+rlabel locali 0 310 20 340 7 A
+port 1 w
+rlabel locali 0 260 20 290 7 B
+port 2 w
+rlabel locali 520 310 540 340 3 Y
+port 3 e
+rlabel metal1 0 560 20 590 7 VDD
+port 4 w
+rlabel metal1 0 0 20 30 7 VSS
+port 5 w
+<< end >>

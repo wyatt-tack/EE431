@@ -1,0 +1,68 @@
+magic
+tech sky130A
+timestamp 1733183068
+<< nwell >>
+rect -25 340 40 590
+rect -280 -280 50 -30
+<< poly >>
+rect -220 0 -170 35
+rect -120 0 -70 35
+rect -375 -30 -170 0
+rect -135 -30 -70 0
+rect -375 -65 -325 -30
+rect -135 -50 -85 -30
+<< locali >>
+rect -500 310 -325 340
+rect -20 310 30 340
+rect 315 310 380 340
+rect -500 260 -325 290
+rect 160 -190 195 290
+rect -35 -310 15 -280
+rect -310 -525 -280 -420
+rect -20 -525 0 -330
+rect -310 -560 0 -525
+<< metal1 >>
+rect -500 560 -310 590
+rect -30 560 20 590
+rect 320 560 380 590
+rect -375 -60 -345 560
+rect 325 0 360 30
+rect -275 -60 65 -30
+rect -480 -590 -440 -475
+rect -370 -505 0 -475
+rect -500 -620 -440 -590
+rect -30 -620 0 -505
+rect 340 -590 360 0
+rect 320 -620 380 -590
+use magic_inv  magic_inv_0
+timestamp 1729885934
+transform 1 0 -135 0 1 -460
+box -105 -45 115 430
+use magic_inv  magic_inv_1
+timestamp 1729885934
+transform 1 0 -375 0 1 -460
+box -105 -45 115 430
+use magic_nand  magic_nand_0
+timestamp 1731535207
+transform 1 0 105 0 1 160
+box -105 -160 220 430
+use magic_nand  magic_nand_1
+timestamp 1731535207
+transform 1 0 -220 0 1 160
+box -105 -160 220 430
+use magic_nand  magic_nand_2
+timestamp 1731535207
+transform 1 0 105 0 1 -460
+box -105 -160 220 430
+<< labels >>
+rlabel locali -500 310 -480 340 7 A
+port 1 w
+rlabel locali -500 260 -480 290 7 B
+port 2 w
+rlabel locali 360 310 380 340 3 Y
+port 3 e
+rlabel metal1 -500 560 -480 590 7 VDD
+port 4 w
+rlabel metal1 -500 -620 -480 -590 7 VSS
+port 5 w
+<< end >>

@@ -1,0 +1,62 @@
+* NGSPICE file created from magic_and.ext - technology: sky130A
+
+.subckt magic_nand A B Y VDD VSS a_100_n230#
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X1 Y B a_100_n230# VSS sky130_fd_pr__nfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+X2 a_100_n230# A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X3 VDD B Y VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+C0 A B 0.21018f
+C1 VDD Y 0.207993f
+C2 VDD a_100_n230# 0.002196f
+C3 Y B 0.253425f
+C4 a_100_n230# B 0.014208f
+C5 A Y 0.09013f
+C6 a_100_n230# Y 0.017664f
+C7 VDD B 0.118732f
+C8 VDD A 0.202433f
+C9 Y VSS 0.271727f
+C10 B VSS 0.476474f
+C11 A VSS 0.453547f
+C12 VDD VSS 1.23585f
+C13 a_100_n230# VSS 0.028228f
+.ends
+
+.subckt magic_inv X Y VDD VSS
+X0 Y X VDD VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=36000,980
+X1 Y X VSS VSS sky130_fd_pr__nfet_01v8 ad=0.45 pd=2.9 as=0.45 ps=2.9 w=1 l=0.5
+**devattr s=18000,580 d=18000,580
+C0 Y VDD 0.10691f
+C1 X Y 0.105971f
+C2 X VDD 0.197978f
+C3 Y VSS 0.267668f
+C4 X VSS 0.481952f
+C5 VDD VSS 0.843976f
+.ends
+
+.subckt magic_and A B Y VDD VSS
+Xmagic_nand_0 A B magic_inv_0/X VDD VSS magic_nand_0/a_100_n230# magic_nand
+Xmagic_inv_0 magic_inv_0/X Y VDD VSS magic_inv
+C0 A VSS 0.003964f
+C1 Y B 4.88e-19
+C2 magic_nand_0/a_100_n230# VSS 0.004912f
+C3 VDD magic_inv_0/X 0.005293f
+C4 VSS magic_inv_0/X 0.09428f
+C5 magic_inv_0/X B 0.013119f
+C6 Y magic_inv_0/X 0.010551f
+C7 VDD B 0.005182f
+C8 Y VDD 0.001742f
+C9 VSS B 0.009819f
+C10 VSS 0 3.79e-20
+C11 Y 0 0.252201f
+C12 magic_inv_0/X 0 0.650359f
+C13 B 0 0.460323f
+C14 A 0 0.453547f
+C15 VDD 0 1.901415f
+C16 magic_nand_0/a_100_n230# 0 0.028228f
+.ends
+

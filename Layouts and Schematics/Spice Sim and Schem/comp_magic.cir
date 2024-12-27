@@ -1,0 +1,5 @@
+** comp_magic.cir
+.include magic_comp.spice
+Xcomp A0 A1 A2 A3 B0 B1 B2 B3 Y VDD VSS magic_comp
+.end
+

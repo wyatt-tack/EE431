@@ -1,0 +1,5 @@
+** xnor_magic.cir
+.include magic_xnor.spice 
+Xxnor A B Y VDD VSS magic_xnor
+.end
+

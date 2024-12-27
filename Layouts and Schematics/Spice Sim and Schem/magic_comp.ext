@@ -1,0 +1,706 @@
+timestamp 1733183236
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use magic_xnor magic_xnor_3 1 0 6880 0 1 1240
+use magic_xnor magic_xnor_2 1 0 4920 0 1 1240
+use magic_xnor magic_xnor_1 1 0 2960 0 1 1240
+use magic_xnor magic_xnor_0 1 0 1000 0 1 1240
+use magic_and magic_and_2 1 0 5880 0 1 -1300
+use magic_and magic_and_1 1 0 3920 0 1 -1300
+use magic_and magic_and_0 1 0 1960 0 1 -1300
+port "VSS" 11 -310 -1300 -270 -1240 m1
+port "VDD" 10 -310 2600 -270 2660 m1
+port "Y" 9 7660 -680 7700 -620 li
+port "A0" 1 -310 1760 -270 1820 li
+port "A1" 2 -310 1860 -270 1920 li
+port "A2" 3 -310 1960 -270 2020 li
+port "A3" 4 -310 2060 -270 2120 li
+port "B0" 5 -310 1290 -270 1350 li
+port "B1" 6 -310 1400 -270 1460 li
+port "B2" 7 -310 1510 -270 1570 li
+port "B3" 8 -310 1620 -270 1680 li
+node "VSS" 35 5840.48 -310 -1300 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1013400 33900 0 0 0 0 0 0 0 0 0 0
+node "VDD" 52 7009.25 -310 2600 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1622800 51880 0 0 0 0 0 0 0 0 0 0
+node "li_4950_n780#" 203 405.498 4950 -780 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57000 2020 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_2990_n780#" 203 403.406 2990 -780 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 57000 2020 0 0 0 0 0 0 0 0 0 0 0 0
+node "Y" 158 323.77 7660 -680 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 44400 1600 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_5800_n680#" 1165 1969.07 5800 -680 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 220600 9060 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_3840_n680#" 1165 1935.8 3840 -680 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 220600 9060 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_1880_n680#" 1155 1829.78 1880 -680 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 217600 8960 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_1700_n780#" 629 1239.11 1700 -780 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 177000 6020 0 0 0 0 0 0 0 0 0 0 0 0
+node "A0" 66 60.0366 -310 1760 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18600 740 0 0 0 0 0 0 0 0 0 0 0 0
+node "A1" 999 850.853 -310 1860 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 162800 7220 0 0 0 0 0 0 0 0 0 0 0 0
+node "A2" 1640 935.053 -310 1960 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 243600 11260 0 0 0 0 0 0 0 0 0 0 0 0
+node "A3" 2283 2255.05 -310 2060 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 324400 15300 0 0 0 0 0 0 0 0 0 0 0 0
+node "B0" 1101 873.824 -310 1290 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 78600 2740 0 0 13800 580 0 0 0 0 0 0 0 0 0 0 0 0
+node "B1" 4071 2255.2 -310 1400 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 220400 8680 0 0 13800 580 0 0 0 0 0 0 0 0 0 0 0 0
+node "B2" 6454 2798.18 -310 1510 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 300800 12740 0 0 13800 580 0 0 0 0 0 0 0 0 0 0 0 0
+node "B3" 8874 4731.6 -310 1620 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 381200 16800 0 0 13800 580 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "B0" "B2" 0.627764
+cap "li_1880_n680#" "B1" 0.285707
+cap "B0" "A0" 1.48164
+cap "li_2990_n780#" "li_1700_n780#" 1.51786
+cap "li_3840_n680#" "li_1880_n680#" 6.89189
+cap "A2" "B2" 464.994
+cap "VDD" "li_5800_n680#" 139.752
+cap "B3" "li_5800_n680#" 0.285707
+cap "VSS" "Y" 56.639
+cap "A0" "B2" 23.1506
+cap "VSS" "B1" 0.318649
+cap "VDD" "li_4950_n780#" 4.33692
+cap "li_3840_n680#" "VSS" 247.182
+cap "VDD" "B3" 168.419
+cap "A1" "B1" 287.294
+cap "li_1700_n780#" "VDD" 56.2575
+cap "li_1880_n680#" "A2" 62.3611
+cap "li_1880_n680#" "B2" 1.30856
+cap "li_3840_n680#" "li_2990_n780#" 37.5
+cap "VSS" "B0" 0.704759
+cap "Y" "li_5800_n680#" 31.9743
+cap "VSS" "B2" 0.0630139
+cap "li_3840_n680#" "li_5800_n680#" 6.89189
+cap "A1" "B0" 4.48681
+cap "li_3840_n680#" "li_4950_n780#" 27.8668
+cap "A1" "A2" 1006.23
+cap "VDD" "B1" 196.098
+cap "A1" "A0" 92.6722
+cap "A1" "B2" 121.456
+cap "B3" "B1" 1.34917
+cap "li_3840_n680#" "VDD" 238.229
+cap "A3" "VDD" 998.317
+cap "li_3840_n680#" "B3" 1.17686
+cap "A3" "B3" 679.03
+cap "li_1700_n780#" "B1" 1.63864
+cap "VSS" "li_1880_n680#" 246.879
+cap "VDD" "B0" 72.8021
+cap "B3" "B0" 0.627764
+cap "li_1700_n780#" "B0" 0.707247
+cap "VDD" "A2" 750.813
+cap "B3" "A2" 93.3107
+cap "li_2990_n780#" "li_1880_n680#" 27.8668
+cap "VDD" "A0" 46.4726
+cap "VDD" "B2" 228.529
+cap "B3" "A0" 80.1917
+cap "B3" "B2" 1686.66
+cap "li_3840_n680#" "A3" 62.1016
+cap "li_2990_n780#" "VSS" 6.18363
+cap "VSS" "li_5800_n680#" 275.794
+cap "VDD" "li_1880_n680#" 234.044
+cap "B0" "B1" 351.681
+cap "VSS" "li_4950_n780#" 6.47517
+cap "li_1700_n780#" "li_1880_n680#" 142.179
+cap "A2" "B1" 11.8987
+cap "A3" "A2" 1733.45
+cap "VDD" "VSS" 2045.97
+cap "A0" "B1" 3.43993
+cap "B1" "B2" 1065.49
+cap "li_3840_n680#" "B2" 0.285707
+cap "A3" "B2" 12.6614
+cap "li_1700_n780#" "VSS" 61.3464
+cap "li_2990_n780#" "li_4950_n780#" 1.47399
+cap "A1" "VDD" 499.481
+cap "A1" "B3" 99.9496
+cap "A1" "li_1700_n780#" 62.6937
+cap "li_2990_n780#" "VDD" 4.33692
+cap "li_5800_n680#" "li_4950_n780#" 37.5
+cap "magic_xnor_1/VSS" "B1" -0.277292
+cap "magic_xnor_1/VSS" "magic_and_0/B" 1.77083
+cap "magic_xnor_1/VSS" "magic_xnor_0/magic_nand_2/B" 41.3462
+cap "magic_xnor_1/VSS" "B0" -0.547427
+cap "magic_and_0/VDD" "magic_xnor_1/VSS" 12.5536
+cap "magic_and_0/A" "magic_xnor_1/magic_nand_2/B" 11.185
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_2/VSS" -0.0730837
+cap "magic_and_0/A" "magic_xnor_1/magic_inv_1/X" 6.4828
+cap "magic_xnor_0/magic_nand_2/A" "magic_and_0/B" 0.259583
+cap "magic_xnor_2/VSS" "magic_and_0/B" 4.40172
+cap "magic_xnor_1/magic_nand_2/VDD" "magic_and_0/B" 0.785278
+cap "magic_and_0/A" "magic_and_1/VDD" 167.502
+cap "magic_xnor_0/magic_nand_2/Y" "magic_and_0/B" 1.99219
+cap "magic_and_1/VDD" "magic_xnor_0/magic_nand_2/B" 0.759628
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_2/VSS" 12.0493
+cap "magic_and_0/magic_nand_0/Y" "magic_and_0/B" 1.36364
+cap "magic_and_1/B" "magic_and_0/B" -0.758929
+cap "magic_and_1/VDD" "magic_xnor_2/VSS" -21.009
+cap "magic_xnor_1/magic_nand_2/B" "magic_and_0/B" 1.12199
+cap "magic_and_1/VDD" "magic_xnor_0/magic_nand_2/A" 0.775755
+cap "magic_xnor_1/magic_inv_1/X" "magic_and_0/B" 0.601504
+cap "magic_and_0/A" "magic_xnor_2/VSS" 12.8596
+cap "magic_xnor_1/magic_nand_2/VDD" "magic_and_0/A" 0.320889
+cap "magic_xnor_0/magic_nand_2/B" "magic_xnor_2/VSS" 0.061053
+cap "magic_and_1/VDD" "magic_xnor_0/magic_nand_2/Y" 0.719633
+cap "magic_and_1/VDD" "magic_and_0/B" -0.237467
+cap "magic_and_0/A" "magic_and_0/magic_nand_0/Y" 26.0819
+cap "magic_and_0/A" "magic_and_0/B" 16.4741
+cap "magic_xnor_0/magic_nand_2/B" "magic_and_0/B" 1.04473
+cap "magic_xnor_0/magic_nand_2/A" "magic_xnor_2/VSS" 0.0391304
+cap "magic_and_1/VDD" "magic_xnor_2/VSS" -21.8018
+cap "magic_and_1/B" "magic_xnor_2/VSS" 2.7822
+cap "magic_and_1/magic_nand_0/Y" "magic_and_1/A" 2.00376
+cap "magic_and_1/magic_nand_0/Y" "magic_xnor_2/VSS" 0.0503173
+cap "magic_and_1/magic_nand_0/a_100_n230#" "magic_and_1/B" 0.0305409
+cap "magic_and_0/A" "magic_xnor_2/VSS" 31.5587
+cap "magic_and_1/B" "magic_and_0/magic_nand_0/Y" 3.74957
+cap "magic_and_1/VDD" "magic_and_0/magic_nand_0/Y" 1.55272
+cap "magic_and_1/magic_nand_0/Y" "magic_and_0/magic_nand_0/Y" 0.00725681
+cap "magic_and_0/A" "magic_and_0/magic_nand_0/Y" 20.3162
+cap "magic_and_0/A" "magic_xnor_1/magic_nand_2/Y" 17.2579
+cap "magic_and_0/magic_nand_0/Y" "magic_xnor_1/magic_inv_0/X" 0.587623
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_1/VDD" 0.759628
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_1/B" 0.0765045
+cap "magic_and_1/B" "magic_and_0/B" -0.758929
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_0/A" 11.9571
+cap "magic_xnor_1/magic_nand_2/B" "magic_and_1/VDD" 0.759628
+cap "magic_xnor_1/magic_nand_2/B" "magic_and_1/B" 0.0765045
+cap "magic_xnor_2/VSS" "magic_and_1/A" 0.387105
+cap "magic_xnor_1/magic_nand_2/B" "magic_and_0/A" 51.694
+cap "magic_and_0/magic_nand_0/Y" "magic_and_1/A" 1.82454
+cap "magic_and_1/magic_nand_0/a_100_n230#" "magic_xnor_2/VSS" 0.216802
+cap "magic_and_0/magic_nand_0/Y" "magic_xnor_2/VSS" 3.55758
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/VSS" -0.0980915
+cap "magic_and_1/B" "magic_and_1/VDD" -0.117473
+cap "magic_and_1/magic_nand_0/Y" "magic_and_1/B" 0.784112
+cap "magic_and_1/B" "magic_and_0/A" 15.6704
+cap "magic_and_0/A" "magic_and_1/VDD" 76.7458
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_2/VSS" 0.0423059
+cap "magic_and_0/B" "magic_xnor_2/VSS" 1.00552
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_2/VSS" 29.3579
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_0/magic_nand_0/Y" 0.757426
+cap "magic_xnor_1/magic_nand_2/a_100_n230#" "magic_and_0/A" 8.71807
+cap "magic_xnor_1/magic_nand_2/B" "magic_and_0/magic_nand_0/Y" 0.654046
+cap "magic_xnor_1/magic_nand_2/VDD" "magic_and_0/magic_nand_0/Y" 0.832888
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_0/B" 0.00734029
+cap "magic_and_1/B" "magic_and_1/A" 13.293
+cap "magic_and_1/VDD" "magic_and_1/A" 63.958
+cap "magic_xnor_1/magic_nand_1/Y" "magic_and_0/magic_nand_0/Y" 0.0342892
+cap "magic_xnor_2/magic_nand_2/VDD" "magic_and_1/magic_nand_0/Y" 0.832888
+cap "magic_xnor_2/magic_nand_2/VDD" "magic_and_1/A" 0.320889
+cap "magic_xnor_3/VSS" "magic_and_1/magic_nand_0/Y" 3.55758
+cap "magic_and_1/B" "magic_xnor_2/magic_nand_2/B" 1.12199
+cap "magic_xnor_3/VSS" "magic_xnor_2/magic_nand_2/A" 0.0423059
+cap "magic_xnor_3/VSS" "magic_and_1/A" 39.5212
+cap "magic_xnor_2/magic_inv_1/X" "magic_and_1/A" 6.4828
+cap "magic_xnor_2/magic_nand_1/Y" "magic_and_1/magic_nand_0/Y" 0.0342892
+cap "magic_and_2/B" "magic_and_2/magic_nand_0/a_100_n230#" 0.0305409
+cap "magic_and_2/B" "magic_and_2/A" 6.61829
+cap "magic_xnor_3/VSS" "magic_and_2/magic_nand_0/Y" 0.0503173
+cap "magic_and_1/B" "magic_xnor_2/magic_nand_2/VDD" 0.785278
+cap "magic_and_2/B" "magic_and_2/VDD" -0.117473
+cap "magic_and_1/B" "magic_xnor_3/VSS" 2.69484
+cap "magic_and_0/magic_nand_0/Y" "magic_and_1/A" 1.53884
+cap "magic_and_2/A" "magic_and_2/VDD" 1.24849
+cap "magic_xnor_2/magic_nand_2/a_100_n230#" "magic_and_1/A" 5.23084
+cap "magic_and_2/B" "magic_and_1/magic_nand_0/Y" 3.74957
+cap "magic_and_1/B" "magic_xnor_2/magic_inv_1/X" 0.601504
+cap "magic_and_2/B" "magic_xnor_2/magic_nand_2/A" 0.0765045
+cap "magic_and_2/B" "magic_and_1/A" 15.6704
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_3/VSS" 41.3462
+cap "magic_and_2/A" "magic_and_1/magic_nand_0/Y" 1.66178
+cap "magic_xnor_2/magic_nand_2/A" "li_1880_n680#" 0.00734029
+cap "magic_xnor_2/magic_nand_2/A" "magic_and_2/VDD" 0.759628
+cap "magic_and_1/magic_nand_0/Y" "magic_and_2/VDD" 1.55272
+cap "magic_and_1/A" "magic_and_2/VDD" 184.176
+cap "magic_xnor_2/magic_nand_2/A" "magic_and_1/magic_nand_0/Y" 0.757426
+cap "magic_and_2/B" "magic_and_2/magic_nand_0/Y" 0.784112
+cap "magic_and_1/magic_nand_0/Y" "magic_and_1/A" 44.3943
+cap "magic_xnor_2/magic_nand_2/A" "magic_and_1/A" 11.6975
+cap "magic_and_1/B" "magic_and_2/B" -1.47399
+cap "magic_xnor_2/magic_inv_0/X" "magic_and_1/magic_nand_0/Y" 0.587623
+cap "magic_and_2/magic_nand_0/Y" "magic_and_1/magic_nand_0/Y" 0.00725681
+cap "magic_and_1/B" "magic_and_2/VDD" -0.059997
+cap "magic_and_1/B" "magic_and_1/magic_nand_0/Y" 0.781676
+cap "magic_and_0/magic_nand_0/Y" "magic_xnor_3/VSS" 1.3219
+cap "magic_and_1/B" "magic_and_1/A" 10.8255
+cap "magic_xnor_2/magic_nand_2/B" "magic_and_1/magic_nand_0/Y" 0.654046
+cap "magic_xnor_2/magic_nand_2/B" "magic_and_1/A" 47.6136
+cap "magic_xnor_3/VSS" "magic_and_2/magic_nand_0/a_100_n230#" 0.216802
+cap "magic_and_2/B" "magic_xnor_3/VSS" 2.7822
+cap "magic_and_2/A" "magic_xnor_3/VSS" 0.387105
+cap "magic_xnor_3/VSS" "magic_and_0/magic_nand_0/B" 0.0220898
+cap "magic_xnor_3/VSS" "magic_and_2/VDD" -42.8108
+cap "magic_xnor_3/VSS" "li_1880_n680#" 1.35968
+cap "magic_and_2/B" "magic_xnor_3/magic_inv_1/X" 0.601504
+cap "magic_and_2/A" "magic_and_2/VDD" 230.723
+cap "magic_and_2/B" "magic_xnor_2/magic_nand_2/B" 0.0765045
+cap "magic_xnor_3/magic_nand_2/B" "magic_and_2/magic_nand_0/Y" 0.0389636
+cap "magic_and_2/A" "magic_xnor_3/magic_nand_2/VDD" 0.320889
+cap "magic_xnor_3/VSS" "magic_and_2/VDD" -31.9272
+cap "magic_xnor_3/magic_nand_2/B" "magic_and_2/A" 30.1744
+cap "magic_and_2/B" "magic_and_2/magic_nand_0/Y" 0.781676
+cap "magic_and_2/Y" "magic_and_2/A" -0.723062
+cap "magic_and_1/A" "magic_xnor_2/magic_nand_2/A" 0.259583
+cap "magic_and_2/B" "magic_and_2/A" 17.5003
+cap "magic_and_1/A" "magic_xnor_2/magic_nand_2/B" 15.2654
+cap "magic_xnor_3/magic_nand_2/B" "magic_xnor_3/VSS" 32.0569
+cap "magic_and_1/A" "magic_xnor_2/magic_nand_2/a_100_n230#" 3.48723
+cap "magic_xnor_3/VSS" "magic_and_2/B" 2.75227
+cap "magic_and_2/A" "magic_xnor_3/magic_inv_1/X" 6.4828
+cap "magic_and_1/magic_nand_0/Y" "magic_and_2/A" 1.7016
+cap "magic_xnor_3/VSS" "magic_and_1/magic_nand_0/Y" 1.3219
+cap "magic_and_1/A" "magic_xnor_2/magic_nand_2/Y" 17.2579
+cap "magic_and_2/magic_nand_0/Y" "magic_and_2/A" 29.7153
+cap "magic_and_1/A" "magic_xnor_3/VSS" 5.07803
+cap "magic_xnor_3/VSS" "magic_xnor_2/magic_nand_2/B" 0.061053
+cap "magic_xnor_3/VSS" "magic_and_2/magic_nand_0/Y" 0.41147
+cap "magic_and_2/B" "magic_and_2/VDD" -0.059997
+cap "magic_and_2/B" "magic_xnor_3/magic_nand_2/VDD" 0.785278
+cap "magic_xnor_3/VSS" "magic_and_2/A" 12.375
+cap "magic_xnor_3/VSS" "magic_and_1/B" 0.0220898
+cap "magic_xnor_3/VSS" "magic_xnor_2/magic_nand_2/Y" -0.0980915
+cap "magic_xnor_3/magic_nand_2/B" "magic_and_2/B" 1.12199
+cap "magic_and_2/VDD" "magic_xnor_2/magic_nand_2/B" 0.759628
+cap "magic_and_1/A" "magic_and_2/VDD" 7.10543e-15
+cap "magic_xnor_3/magic_inv_0/X" "magic_and_2/magic_nand_0/Y" 0.351648
+cap "magic_xnor_3/magic_nand_2/VDD" "magic_and_2/magic_nand_0/Y" 0.832888
+cap "magic_xnor_3/magic_nand_2/A" "magic_and_2/Y" 0.0991053
+cap "magic_and_2/A" "magic_xnor_3/magic_nand_2/A" 11.9571
+cap "magic_and_2/B" "magic_xnor_3/VSS" 5.36041
+cap "magic_and_2/magic_nand_0/Y" "magic_xnor_3/magic_inv_0/X" 0.235975
+cap "magic_and_2/magic_nand_0/a_100_n230#" "magic_xnor_3/VSS" 1.17512
+cap "magic_and_2/magic_nand_0/Y" "magic_and_2/Y" 2.70557
+cap "magic_and_2/A" "magic_and_2/magic_nand_0/Y" 16.6828
+cap "magic_xnor_3/magic_nand_2/B" "magic_xnor_3/VSS" 9.24915
+cap "magic_xnor_3/magic_nand_2/A" "li_3840_n680#" 0.00734029
+cap "magic_xnor_3/magic_nand_2/B" "magic_and_2/Y" 0.0991053
+cap "magic_and_2/Y" "magic_xnor_3/VSS" 60.0287
+cap "magic_and_2/A" "magic_xnor_3/magic_nand_2/a_100_n230#" 8.71807
+cap "magic_and_2/A" "magic_xnor_3/VSS" 33.4476
+cap "magic_and_2/A" "magic_xnor_3/magic_nand_2/B" 32.7046
+cap "magic_xnor_3/magic_nand_2/A" "magic_and_2/magic_nand_0/Y" 0.757426
+cap "magic_and_2/VDD" "magic_xnor_3/VSS" 99.1083
+cap "magic_xnor_3/magic_nand_1/Y" "magic_and_2/magic_nand_0/Y" 0.0342892
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_3/VSS" -0.0980915
+cap "magic_and_2/A" "magic_and_2/Y" 16.856
+cap "magic_xnor_3/magic_nand_2/A" "magic_xnor_3/VSS" 0.0423059
+cap "magic_and_2/VDD" "magic_and_2/A" 40.7793
+cap "li_3840_n680#" "magic_xnor_3/VSS" 1.00552
+cap "magic_and_2/A" "magic_xnor_3/magic_nand_2/Y" 17.2579
+cap "magic_xnor_3/magic_nand_2/B" "magic_and_2/magic_nand_0/Y" 0.615083
+cap "magic_and_2/magic_nand_0/Y" "magic_xnor_3/VSS" 34.479
+cap "magic_xnor_1/VSS" "magic_xnor_0/A" 17.3455
+cap "magic_xnor_1/VDD" "magic_xnor_0/magic_nand_2/a_100_n230#" 0.388369
+cap "magic_xnor_0/B" "magic_xnor_0/A" 0.0921173
+cap "magic_xnor_1/A" "magic_xnor_1/VSS" 5.32256
+cap "magic_xnor_0/B" "magic_xnor_0/Y" 0.117037
+cap "magic_xnor_1/VDD" "magic_xnor_1/VSS" 74.5399
+cap "magic_xnor_0/B" "magic_xnor_1/A" 1.11692
+cap "magic_xnor_1/VDD" "magic_xnor_0/magic_nand_2/B" 13.5012
+cap "magic_xnor_1/VDD" "magic_xnor_0/B" 4.62778
+cap "magic_xnor_0/Y" "magic_xnor_0/A" 0.0577032
+cap "magic_xnor_0/A" "magic_xnor_0/magic_nand_1/Y" 0.259531
+cap "magic_xnor_1/A" "magic_xnor_0/A" 0.203937
+cap "magic_xnor_1/VDD" "magic_xnor_0/A" 83.7513
+cap "magic_xnor_1/VDD" "magic_xnor_0/Y" 0.0983639
+cap "magic_xnor_1/VDD" "magic_xnor_1/A" 13.7511
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_0/A" 0.0821469
+cap "magic_xnor_1/VDD" "magic_xnor_0/magic_nand_2/A" 3.23756
+cap "magic_xnor_1/VSS" "magic_xnor_0/magic_nand_2/B" 21.3098
+cap "magic_xnor_1/VDD" "magic_xnor_0/magic_nand_2/Y" 0.620121
+cap "magic_xnor_0/B" "magic_xnor_1/VSS" 0.789693
+cap "magic_xnor_2/VSS" "magic_xnor_1/magic_nand_2/B" 9.52599
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_0/Y" 0.0773218
+cap "magic_xnor_2/VSS" "magic_xnor_2/VDD" 36.5249
+cap "magic_xnor_2/VSS" "magic_xnor_0/magic_nand_2/Y" -6.335
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_2/B" 1.2297
+cap "magic_xnor_0/Y" "magic_xnor_1/B" 0.209442
+cap "magic_xnor_1/A" "magic_xnor_0/B" 0.703382
+cap "magic_xnor_2/VSS" "magic_xnor_1/Y" 5.46141
+cap "magic_xnor_1/A" "magic_xnor_0/Y" 9.66222
+cap "magic_xnor_1/A" "magic_xnor_0/magic_nand_2/Y" 0.724595
+cap "magic_xnor_0/A" "magic_xnor_0/Y" -0.139342
+cap "magic_xnor_1/A" "magic_xnor_2/VDD" 1.16866
+cap "magic_xnor_1/A" "magic_xnor_1/Y" 3.04291
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_1/Y" 0.868242
+cap "magic_xnor_2/VDD" "magic_xnor_0/B" 0.330646
+cap "magic_xnor_0/Y" "magic_xnor_1/magic_nand_2/B" 12.6878
+cap "magic_xnor_0/A" "magic_xnor_2/VDD" 0.131182
+cap "magic_xnor_0/Y" "magic_xnor_0/magic_nand_2/Y" 138.049
+cap "magic_xnor_2/VDD" "magic_xnor_0/Y" 144.508
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/VSS" 0.197633
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_2/Y" 1.53982
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_1/Y" 10.7979
+cap "magic_xnor_2/VSS" "magic_xnor_0/magic_nand_2/B" -0.639246
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_0/a_100_n230#" 0.264464
+cap "magic_xnor_2/VDD" "magic_xnor_1/Y" 0.0983639
+cap "magic_xnor_1/magic_nand_2/a_100_n230#" "magic_xnor_2/VSS" 0.158956
+cap "magic_and_0/magic_nand_0/Y" "magic_xnor_1/A" 0.292711
+cap "magic_xnor_2/VSS" "magic_xnor_1/magic_nand_2/A" 2.40224
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_0/magic_nand_2/B" 0.0114675
+cap "magic_xnor_2/VSS" "magic_xnor_1/B" 2.81252
+cap "magic_xnor_1/A" "magic_xnor_0/magic_nand_2/B" 5.65104
+cap "magic_xnor_1/A" "magic_xnor_2/VSS" 10.7305
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_2/A" 0.10478
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_1/a_100_n230#" 0.297107
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_0/Y" 0.494186
+cap "magic_xnor_0/Y" "magic_xnor_0/magic_nand_2/B" 3.8177
+cap "magic_xnor_2/VSS" "magic_xnor_0/Y" 245.249
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_0/magic_nand_2/B" 0.0328161
+cap "magic_xnor_2/A" "magic_xnor_1/magic_nand_2/Y" 0.237624
+cap "magic_xnor_1/A" "magic_and_1/VDD" 0.391146
+cap "magic_xnor_2/magic_nand_2/a_100_n230#" "magic_xnor_2/VSS" 0.158956
+cap "magic_xnor_2/B" "magic_xnor_2/VSS" 2.81252
+cap "magic_xnor_2/A" "magic_xnor_1/magic_nand_2/B" 2.9273
+cap "magic_and_0/magic_nand_0/Y" "magic_xnor_1/B" 0.635567
+cap "magic_xnor_2/A" "magic_xnor_2/VSS" 9.55072
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_1/Y" 0.0773218
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_2/B" 6.47803
+cap "magic_xnor_0/Y" "magic_xnor_1/A" 0.0723265
+cap "magic_xnor_0/Y" "magic_xnor_1/magic_nand_2/Y" 0.494186
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_1/magic_nand_2/A" 0.00303119
+cap "magic_xnor_1/B" "magic_xnor_1/Y" 0.43586
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_2/VSS" 2.40224
+cap "magic_xnor_0/Y" "magic_xnor_2/VSS" 0.201104
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_1/magic_nand_2/B" 0.0114675
+cap "magic_xnor_1/A" "magic_xnor_1/Y" 0.0263433
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_2/VSS" 3.78559
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_2/magic_nand_2/B" 0.0328161
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_1/Y" 139.531
+cap "magic_xnor_1/B" "magic_xnor_2/VSS" 0.860571
+cap "magic_xnor_2/magic_nand_0/B" "magic_xnor_1/Y" 0.494186
+cap "magic_xnor_0/Y" "magic_xnor_2/VDD" 0.402208
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_1/VDD" 0.0886533
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_1/Y" 42.6315
+cap "magic_xnor_1/Y" "magic_xnor_2/VSS" 235.621
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_0/Y" 0.00734029
+cap "magic_xnor_2/VDD" "magic_xnor_1/B" 0.128621
+cap "magic_xnor_1/A" "magic_xnor_2/VSS" 0.428526
+cap "magic_xnor_1/magic_nand_2/A" "magic_and_1/B" 0.0216142
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/VSS" -6.335
+cap "magic_xnor_2/VDD" "magic_xnor_1/Y" 125.583
+cap "magic_xnor_2/magic_nand_0/B" "magic_xnor_2/VSS" 0.197633
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_1/Y" 0.0574588
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_2/VSS" 14.7431
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/VDD" 0.0366723
+cap "magic_xnor_2/A" "magic_xnor_1/B" 0.889428
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_1/A" 0.263729
+cap "magic_xnor_2/VDD" "magic_xnor_1/magic_nand_2/B" 0.873132
+cap "magic_xnor_2/VDD" "magic_xnor_2/VSS" 26.2706
+cap "magic_xnor_2/B" "magic_xnor_1/Y" 0.209442
+cap "magic_xnor_2/A" "magic_xnor_1/Y" 5.42205
+cap "magic_xnor_1/magic_nand_2/A" "magic_xnor_2/VSS" 0.00317542
+cap "magic_xnor_1/B" "magic_and_1/VDD" 4.10137
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_3/VSS" 0.00317542
+cap "magic_xnor_2/B" "magic_xnor_2/Y" 0.43586
+cap "magic_xnor_3/VSS" "magic_xnor_2/Y" 14.0569
+cap "magic_xnor_2/A" "magic_xnor_1/magic_nand_1/B" 0.703382
+cap "magic_xnor_1/magic_nand_2/VDD" "magic_xnor_2/A" 1.26925
+cap "magic_xnor_1/magic_nand_2/B" "magic_xnor_2/A" 2.72374
+cap "magic_xnor_2/B" "magic_and_2/VDD" 4.10137
+cap "magic_xnor_2/B" "magic_and_1/magic_nand_0/Y" 0.635567
+cap "magic_and_1/B" "magic_xnor_2/A" 0.620182
+cap "magic_xnor_2/A" "magic_xnor_3/VDD" -2.1632
+cap "magic_xnor_1/magic_nand_0/a_100_n230#" "magic_xnor_3/VDD" 0.264464
+cap "magic_xnor_1/magic_nand_1/B" "magic_xnor_3/VDD" 0.330646
+cap "magic_xnor_2/B" "magic_xnor_3/A" 0.877295
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/A" 0.7507
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_2/B" 6.2098
+cap "magic_xnor_3/VSS" "magic_xnor_2/A" 1.60834
+cap "magic_xnor_1/magic_nand_1/a_100_n230#" "magic_xnor_3/VDD" 0.297107
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_2/Y" 47.2264
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_3/VDD" 1.40278
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_2/A" 0.00734029
+cap "magic_xnor_3/VDD" "magic_xnor_1/magic_nand_1/A" 0.131182
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_2/Y" 0.494186
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_2/Y" 0.0574588
+cap "magic_xnor_2/B" "magic_xnor_3/VDD" 0.132313
+cap "magic_xnor_3/VSS" "magic_xnor_3/VDD" 9.39735
+cap "magic_xnor_2/B" "magic_xnor_3/VSS" 0.860571
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_3/VDD" 0.868242
+cap "magic_xnor_2/magic_nand_2/A" "magic_and_2/VDD" 0.0886533
+cap "magic_xnor_1/Y" "magic_xnor_2/A" 3.72028
+cap "magic_xnor_2/Y" "magic_xnor_2/A" 3.06925
+cap "magic_xnor_1/Y" "magic_xnor_3/VDD" 19.3274
+cap "magic_and_2/B" "magic_xnor_2/magic_nand_2/A" 0.0216142
+cap "magic_xnor_2/Y" "magic_xnor_3/VDD" 0.0983639
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_3/VSS" 21.1227
+cap "magic_xnor_1/Y" "magic_xnor_3/VSS" 18.4244
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/magic_nand_2/A" 0.00303119
+cap "magic_and_1/magic_nand_0/Y" "magic_xnor_2/A" 0.292711
+cap "magic_and_2/VDD" "magic_xnor_2/A" 2.45375
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_3/VDD" 0.868242
+cap "magic_xnor_3/Y" "magic_xnor_3/A" 3.06925
+cap "magic_xnor_2/Y" "magic_xnor_3/A" 9.14233
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_3/VDD" 0.873132
+cap "magic_xnor_3/magic_nand_2/a_100_n230#" "magic_xnor_3/VSS" 0.158956
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_3/VSS" 0.197633
+cap "magic_xnor_3/VSS" "magic_xnor_3/VDD" 35.668
+cap "magic_xnor_3/magic_nand_2/B" "magic_xnor_2/magic_nand_2/B" 0.0328161
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/VDD" 1.43945
+cap "magic_xnor_3/B" "magic_xnor_3/VDD" 0.0107721
+cap "magic_xnor_3/magic_nand_2/A" "magic_xnor_2/magic_nand_2/B" 0.0114675
+cap "magic_xnor_3/magic_nand_2/B" "magic_xnor_3/B" 1.42109e-14
+cap "magic_xnor_3/VSS" "magic_xnor_3/magic_nand_2/B" 20.031
+cap "magic_xnor_3/VSS" "magic_xnor_3/magic_nand_2/A" 2.40224
+cap "magic_xnor_2/B" "magic_xnor_3/VDD" 0.330646
+cap "magic_xnor_2/Y" "magic_xnor_2/magic_nand_2/B" 6.2029
+cap "magic_xnor_2/magic_nand_2/B" "magic_xnor_3/A" 5.65104
+cap "magic_xnor_2/Y" "magic_xnor_3/B" 0.209442
+cap "magic_xnor_2/magic_nand_0/a_100_n230#" "magic_xnor_3/VDD" 0.264464
+cap "magic_xnor_3/VSS" "magic_xnor_3/Y" 5.46141
+cap "magic_xnor_3/VSS" "magic_xnor_2/Y" 245.249
+cap "magic_xnor_3/B" "magic_xnor_3/Y" 0.261281
+cap "magic_xnor_3/VSS" "magic_xnor_3/A" 11.1591
+cap "magic_xnor_2/Y" "magic_xnor_2/magic_nand_2/Y" 139.531
+cap "magic_and_2/VDD" "magic_xnor_3/A" 2.45375
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/A" 0.988324
+cap "magic_and_2/B" "magic_xnor_3/A" 0.620182
+cap "magic_xnor_2/A" "magic_xnor_3/VDD" 0.131182
+cap "magic_xnor_2/B" "magic_xnor_3/A" 0.703382
+cap "magic_and_2/magic_nand_0/Y" "magic_xnor_3/A" 0.292711
+cap "magic_xnor_2/magic_nand_1/a_100_n230#" "magic_xnor_3/VDD" 0.297107
+cap "magic_xnor_2/Y" "magic_xnor_3/VDD" 144.508
+cap "magic_xnor_3/VSS" "magic_xnor_2/magic_nand_2/B" -0.639246
+cap "magic_xnor_3/Y" "magic_xnor_3/VDD" 0.0983639
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_2/Y" 0.494186
+cap "magic_xnor_3/A" "magic_xnor_3/VDD" -0.893949
+cap "magic_xnor_3/B" "magic_and_2/VDD" 3.41578
+cap "magic_xnor_3/VSS" "magic_xnor_3/B" 3.54166
+cap "magic_xnor_3/magic_nand_2/B" "magic_xnor_3/Y" 29.7872
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_2/B" 12.6878
+cap "magic_xnor_3/VSS" "magic_xnor_2/magic_nand_2/Y" -6.335
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_2/A" 0.0773218
+cap "magic_and_2/magic_nand_0/Y" "magic_xnor_3/B" 0.399592
+cap "magic_xnor_3/VDD" "magic_xnor_2/Y" 0.402208
+cap "magic_and_2/magic_nand_0/Y" "magic_xnor_3/B" 0.235975
+cap "magic_xnor_3/VDD" "magic_xnor_3/B" 7.10543e-15
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_2/Y" 0.494186
+cap "magic_xnor_3/Y" "magic_xnor_3/magic_nand_2/B" 23.6421
+cap "magic_xnor_3/Y" "magic_xnor_3/B" 0.174579
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/magic_nand_2/A" 0.00303119
+cap "magic_xnor_3/magic_nand_2/A" "magic_and_2/Y" 0.0251294
+cap "magic_and_2/VDD" "magic_xnor_3/B" 0.685588
+cap "magic_xnor_3/VSS" "magic_xnor_3/magic_nand_2/B" 4.19063
+cap "magic_xnor_3/VSS" "magic_xnor_3/B" 0.0830312
+cap "magic_xnor_2/Y" "magic_xnor_3/VSS" 0.201104
+cap "magic_xnor_3/VDD" "magic_xnor_3/Y" 99.0674
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_2/A" 0.00734029
+cap "magic_xnor_3/VDD" "magic_xnor_3/VSS" -3.78833
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_3/Y" 139.531
+cap "magic_xnor_3/VSS" "magic_xnor_3/magic_nand_2/Y" -6.34859
+cap "magic_xnor_3/VSS" "magic_xnor_3/Y" 216.719
+cap "magic_xnor_3/magic_nand_2/A" "magic_xnor_3/Y" 0.0574588
+cap "magic_xnor_3/VSS" "magic_xnor_3/magic_nand_2/A" 0.581457
+cap "magic_xnor_0/B" "B2" 11.2411
+cap "magic_xnor_1/VDD" "B2" 14.2289
+cap "magic_xnor_1/VDD" "magic_xnor_0/B" 8.59505
+cap "magic_xnor_1/VDD" "magic_xnor_0/Y" 0.177055
+cap "magic_xnor_0/A" "magic_xnor_1/VSS" 14.3705
+cap "B3" "magic_xnor_0/magic_nand_1/Y" 0.0974959
+cap "B2" "magic_xnor_1/VSS" 4.61805
+cap "magic_xnor_1/A" "magic_xnor_1/B" -2.4769
+cap "magic_xnor_1/VDD" "magic_xnor_1/VSS" 0.38871
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_1/A" 0.106006
+cap "magic_xnor_0/A" "magic_xnor_1/A" 64.0633
+cap "magic_xnor_0/magic_nand_1/Y" "magic_xnor_1/A" 7.58188
+cap "B3" "magic_xnor_1/VDD" 0.255197
+cap "magic_xnor_1/A" "magic_xnor_0/B" 59.3608
+cap "magic_xnor_1/A" "magic_xnor_1/VDD" 209.229
+cap "magic_xnor_1/A" "magic_xnor_0/Y" 0.172453
+cap "B3" "magic_xnor_1/VSS" 3.19343
+cap "magic_xnor_1/A" "magic_xnor_1/VSS" 2.84659
+cap "magic_xnor_0/A" "magic_xnor_1/B" 45.6977
+cap "magic_xnor_0/magic_nand_1/Y" "magic_xnor_1/B" 28.148
+cap "magic_xnor_0/A" "magic_xnor_0/magic_nand_2/Y" 0.11114
+cap "magic_xnor_0/B" "magic_xnor_1/B" 14.6284
+cap "magic_xnor_0/A" "magic_xnor_0/magic_nand_1/Y" 0.569763
+cap "B2" "magic_xnor_1/B" -2.1191
+cap "magic_xnor_1/VDD" "magic_xnor_1/B" 131.151
+cap "magic_xnor_0/A" "B2" 17.7359
+cap "magic_xnor_0/magic_nand_1/Y" "B2" 0.260731
+cap "magic_xnor_0/A" "magic_xnor_0/B" 39.9621
+cap "magic_xnor_0/magic_nand_2/A" "magic_xnor_1/A" 0.0527216
+cap "magic_xnor_0/A" "magic_xnor_1/VDD" 60.5232
+cap "magic_xnor_0/magic_nand_1/Y" "magic_xnor_1/VDD" 0.0841261
+cap "magic_xnor_0/A" "magic_xnor_0/Y" 0.0375345
+cap "B2" "magic_xnor_2/VDD" 24.0854
+cap "magic_xnor_0/Y" "magic_xnor_2/VSS" 8.65783
+cap "magic_xnor_2/VDD" "magic_xnor_2/VSS" 0.668583
+cap "magic_xnor_0/Y" "magic_xnor_1/magic_nand_1/Y" 0.584968
+cap "magic_xnor_0/Y" "magic_xnor_1/A" 8.33986
+cap "magic_xnor_1/B" "magic_xnor_0/Y" 30.2828
+cap "magic_xnor_0/magic_nand_1/Y" "magic_xnor_2/VDD" 3.8199
+cap "magic_xnor_2/VDD" "magic_xnor_0/magic_nand_0/a_100_n230#" 0.357804
+cap "magic_xnor_2/B" "magic_xnor_2/VDD" 26.4231
+cap "magic_xnor_1/Y" "magic_xnor_1/A" 0.138951
+cap "magic_xnor_1/A" "magic_xnor_2/VDD" 196.6
+cap "magic_xnor_1/B" "magic_xnor_2/VDD" 143.804
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_0/Y" 1.12335
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_2/VDD" 5.35488
+cap "B2" "magic_xnor_1/A" 0.175509
+cap "magic_xnor_1/magic_nand_1/a_100_n230#" "magic_xnor_0/Y" 0.0593673
+cap "magic_xnor_1/A" "magic_xnor_2/VSS" 3.6463
+cap "magic_xnor_0/A" "magic_xnor_0/Y" -0.412888
+cap "magic_xnor_1/A" "magic_xnor_1/magic_nand_1/Y" 0.502798
+cap "magic_xnor_0/magic_nand_1/Y" "magic_xnor_1/A" 34.8039
+cap "magic_xnor_1/B" "magic_xnor_0/magic_nand_1/Y" 16.8403
+cap "magic_xnor_1/A" "magic_xnor_2/B" 14.0597
+cap "magic_xnor_0/A" "magic_xnor_2/VDD" 0.517129
+cap "magic_xnor_1/B" "magic_xnor_1/magic_nand_1/Y" 1.47792
+cap "magic_xnor_1/B" "magic_xnor_1/A" 20.9762
+cap "magic_xnor_0/magic_nand_2/Y" "magic_xnor_1/A" 39.0691
+cap "magic_xnor_0/B" "magic_xnor_2/VDD" 1.35342
+cap "magic_xnor_1/B" "magic_xnor_0/magic_nand_2/Y" 17.4222
+cap "magic_xnor_0/magic_nand_1/a_100_n230#" "magic_xnor_2/VDD" 0.401968
+cap "magic_xnor_0/A" "magic_xnor_1/A" -0.363636
+cap "magic_xnor_0/Y" "magic_xnor_2/VDD" 5.2249
+cap "magic_xnor_1/Y" "magic_xnor_2/VDD" 0.177055
+cap "magic_xnor_1/B" "magic_xnor_1/A" 0.238649
+cap "magic_xnor_2/A" "magic_xnor_2/VDD" 114.297
+cap "magic_xnor_1/A" "magic_xnor_2/B" 10.5392
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_2/B" 29.8033
+cap "magic_xnor_1/Y" "magic_xnor_2/VSS" 4.32531
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/VDD" 0.27799
+cap "magic_xnor_1/Y" "magic_xnor_2/B" 23.2528
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_2/A" 17.1609
+cap "magic_xnor_1/A" "magic_xnor_2/A" 10.7482
+cap "magic_xnor_1/Y" "magic_xnor_2/A" 5.38042
+cap "magic_xnor_1/B" "magic_xnor_2/B" 8.73157
+cap "magic_xnor_2/A" "A3" 8.88178e-16
+cap "magic_xnor_1/Y" "magic_xnor_1/magic_nand_2/Y" 1.12335
+cap "magic_xnor_2/A" "magic_xnor_2/VSS" 0.579349
+cap "magic_xnor_1/B" "magic_xnor_2/A" 11.7194
+cap "magic_xnor_2/A" "magic_xnor_1/magic_nand_2/A" 0.035704
+cap "magic_xnor_2/A" "magic_xnor_2/B" -0.17689
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/B" 11.5253
+cap "magic_xnor_1/A" "magic_xnor_0/magic_nand_2/Y" 1.0297
+cap "magic_xnor_1/A" "magic_xnor_2/VDD" -0.300255
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/A" 18.418
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_1/a_100_n230#" 0.0593673
+cap "magic_xnor_1/Y" "magic_xnor_2/VDD" 0.115864
+cap "magic_xnor_1/Y" "magic_xnor_2/magic_nand_1/Y" 0.584968
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_0/Y" 0.580601
+cap "magic_xnor_1/A" "magic_xnor_0/Y" 0.199374
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_1/A" 0.126095
+cap "magic_xnor_1/Y" "magic_xnor_1/A" -0.285707
+cap "magic_xnor_2/B" "magic_xnor_2/VDD" 144.886
+cap "magic_xnor_2/B" "magic_xnor_2/magic_nand_1/Y" 1.47792
+cap "magic_xnor_1/magic_nand_1/Y" "magic_xnor_1/B" 1.46967
+cap "magic_xnor_2/A" "magic_xnor_1/Y" 0.199374
+cap "magic_xnor_2/B" "magic_xnor_3/A" 7.20335
+cap "magic_xnor_3/VSS" "magic_xnor_1/Y" 4.33252
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_2/A" 0.628893
+cap "magic_xnor_3/VDD" "magic_xnor_2/magic_nand_2/Y" 0.012249
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_3/B" 22.8729
+cap "magic_xnor_2/Y" "magic_xnor_2/A" 0.11677
+cap "magic_xnor_2/Y" "magic_xnor_3/B" 4.86054
+cap "magic_xnor_2/B" "magic_xnor_3/VDD" 16.0743
+cap "magic_xnor_2/A" "magic_xnor_3/B" 20.1064
+cap "magic_xnor_2/magic_nand_2/A" "magic_xnor_3/A" 0.0166956
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_3/A" 10.8428
+cap "magic_xnor_3/VSS" "magic_xnor_2/A" 3.31621
+cap "magic_xnor_3/VDD" "magic_xnor_1/magic_nand_0/a_100_n230#" 0.357804
+cap "magic_xnor_3/VDD" "magic_xnor_1/Y" 5.10903
+cap "magic_xnor_2/Y" "magic_xnor_3/A" 0.894986
+cap "magic_xnor_2/A" "magic_xnor_3/A" 6.59831
+cap "magic_xnor_3/VDD" "magic_xnor_1/magic_nand_1/B" 1.35342
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_2/A" 1.0297
+cap "magic_xnor_3/VSS" "magic_xnor_3/A" 0.386296
+cap "magic_xnor_3/VDD" "magic_xnor_2/magic_nand_1/Y" 0.585861
+cap "magic_xnor_3/VDD" "magic_xnor_1/magic_nand_1/Y" 3.8199
+cap "magic_xnor_3/VDD" "magic_xnor_2/Y" 0.297229
+cap "magic_xnor_3/VDD" "magic_xnor_2/A" 75.1686
+cap "magic_xnor_3/VDD" "magic_xnor_3/B" 60.0071
+cap "magic_xnor_3/VDD" "magic_xnor_1/magic_nand_1/a_100_n230#" 0.401968
+cap "magic_xnor_3/VSS" "magic_xnor_3/VDD" 0.668583
+cap "magic_xnor_2/B" "magic_xnor_2/magic_nand_1/Y" 1.46967
+cap "magic_xnor_3/VDD" "magic_xnor_3/A" 49.2305
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/B" 1.23188
+cap "magic_xnor_1/magic_nand_2/Y" "magic_xnor_3/VDD" 5.07689
+cap "magic_xnor_1/magic_nand_1/A" "magic_xnor_3/VDD" 0.517129
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_1/Y" 0.580601
+cap "magic_xnor_2/B" "magic_xnor_2/A" 21.3918
+cap "magic_xnor_2/B" "magic_xnor_3/B" 5.88617
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/A" 0.364958
+cap "magic_xnor_3/VDD" "magic_xnor_2/magic_nand_0/a_100_n230#" 0.357804
+cap "magic_xnor_3/A" "magic_xnor_3/B" 21.2149
+cap "magic_xnor_3/VDD" "magic_xnor_3/B" 99.7509
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_3/B" 2.43656
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/A" 14.4718
+cap "magic_xnor_3/A" "magic_xnor_3/VSS" 3.41913
+cap "magic_xnor_3/VDD" "magic_xnor_2/magic_nand_2/Y" 5.59641
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_1/a_100_n230#" 0.0593673
+cap "magic_xnor_3/VDD" "magic_xnor_3/VSS" 0.668583
+cap "magic_xnor_3/VDD" "magic_xnor_2/B" 1.35342
+cap "magic_xnor_3/VDD" "magic_xnor_3/A" 112.801
+cap "magic_xnor_2/Y" "magic_xnor_3/B" 14.5011
+cap "magic_xnor_3/A" "magic_xnor_2/A" -0.358209
+cap "magic_xnor_3/Y" "magic_xnor_3/A" 0.11677
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_3/A" 0.628893
+cap "magic_xnor_3/VDD" "magic_xnor_2/A" 0.517129
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_3/VDD" 0.578479
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_2/Y" 1.12335
+cap "magic_xnor_3/VDD" "magic_xnor_3/Y" 0.177055
+cap "magic_xnor_2/Y" "magic_xnor_3/VSS" 8.65783
+cap "magic_xnor_3/A" "magic_xnor_2/Y" 3.34334
+cap "magic_xnor_3/VDD" "magic_xnor_2/Y" 5.38498
+cap "magic_xnor_2/A" "magic_xnor_2/Y" -0.263526
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_2/Y" 0.584968
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_3/A" 0.181197
+cap "magic_xnor_3/VDD" "magic_xnor_2/magic_nand_1/a_100_n230#" 0.401968
+cap "magic_xnor_2/magic_nand_1/Y" "magic_xnor_3/VDD" 3.8199
+cap "magic_xnor_2/magic_nand_2/Y" "magic_xnor_3/B" 7.448
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_3/B" 0.511022
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_3/Y" 1.12335
+cap "magic_xnor_3/magic_nand_1/Y" "magic_xnor_3/VDD" 1.02854
+cap "magic_xnor_2/Y" "magic_xnor_3/magic_nand_1/Y" 0.580601
+cap "magic_xnor_3/VDD" "magic_xnor_3/Y" 0.240021
+cap "magic_xnor_3/VSS" "magic_xnor_3/Y" -0.221866
+cap "magic_xnor_3/A" "magic_xnor_3/Y" -0.263526
+cap "magic_xnor_3/magic_nand_2/Y" "magic_xnor_3/VDD" 0.699428
+cap "magic_xnor_3/VDD" "magic_xnor_3/B" 0.332206
+merge "magic_xnor_2/A" "B2" -1658.38 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -174600 -7660 0 0 -13800 -580 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_2/VSUBS" "magic_xnor_3/VSUBS" 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_3/VSUBS" "magic_and_1/VSUBS"
+merge "magic_and_1/VSUBS" "magic_xnor_2/VSUBS"
+merge "magic_xnor_2/VSUBS" "magic_and_0/VSUBS"
+merge "magic_and_0/VSUBS" "magic_xnor_0/VSUBS"
+merge "magic_xnor_0/VSUBS" "magic_xnor_1/VSUBS"
+merge "magic_xnor_1/VSUBS" "VSUBS"
+merge "magic_xnor_2/B" "A2" -489.371 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -81600 -4120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_2/m1_640_n1240#" "magic_xnor_1/m1_640_n1240#" -5259.76 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -351600 -13040 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_1/m1_640_n1240#" "magic_and_0/magic_inv_0/VSS"
+merge "magic_and_0/magic_inv_0/VSS" "magic_and_2/VSS"
+merge "magic_and_2/VSS" "magic_xnor_1/magic_nand_2/VSS"
+merge "magic_xnor_1/magic_nand_2/VSS" "magic_xnor_3/VSS"
+merge "magic_xnor_3/VSS" "magic_xnor_0/magic_nand_2/VSS"
+merge "magic_xnor_0/magic_nand_2/VSS" "magic_and_1/VSS"
+merge "magic_and_1/VSS" "magic_xnor_2/VSS"
+merge "magic_xnor_2/VSS" "magic_and_0/VSS"
+merge "magic_and_0/VSS" "magic_xnor_0/VSS"
+merge "magic_xnor_0/VSS" "magic_xnor_1/VSS"
+merge "magic_xnor_1/VSS" "VSS"
+merge "magic_and_2/Y" "Y" -36.7804 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_3/Y" "magic_and_2/A" -979.811 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6600 -460 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_2/A" "li_5800_n680#"
+merge "magic_xnor_0/B" "A0" -76.0206 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_0/A" "B0" -291.205 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6000 -320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_2/magic_nand_0/VDD" "magic_xnor_1/m1_640_1120#" -6719.17 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -603000 -20940 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_1/m1_640_1120#" "magic_xnor_1/magic_nand_1/VDD"
+merge "magic_xnor_1/magic_nand_1/VDD" "magic_xnor_3/VDD"
+merge "magic_xnor_3/VDD" "magic_xnor_0/magic_nand_0/VDD"
+merge "magic_xnor_0/magic_nand_0/VDD" "magic_xnor_2/VDD"
+merge "magic_xnor_2/VDD" "magic_xnor_0/VDD"
+merge "magic_xnor_0/VDD" "magic_xnor_1/VDD"
+merge "magic_xnor_1/VDD" "magic_and_0/magic_inv_0/VDD"
+merge "magic_and_0/magic_inv_0/VDD" "magic_and_2/VDD"
+merge "magic_and_2/VDD" "magic_and_1/VDD"
+merge "magic_and_1/VDD" "magic_and_0/VDD"
+merge "magic_and_0/VDD" "VDD"
+merge "magic_and_0/Y" "magic_and_1/B" -110.659 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1800 -300 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_1/B" "li_2990_n780#"
+merge "magic_xnor_1/Y" "magic_and_0/A" -1101.27 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3600 -360 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_0/A" "li_1880_n680#"
+merge "magic_and_2/B" "magic_and_1/Y" -112.751 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -1800 -300 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_1/Y" "li_4950_n780#"
+merge "magic_xnor_1/magic_nand_1/A" "magic_xnor_1/A" -606.064 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -4800 -280 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_1/A" "B1"
+merge "magic_xnor_2/Y" "magic_and_1/A" -1140.86 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6600 -460 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_1/A" "li_3840_n680#"
+merge "magic_xnor_3/A" "B3" -2821.02 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -227200 -10420 0 0 -13800 -580 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_3/B" "A3" -1419.92 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -191200 -9680 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_xnor_0/Y" "magic_and_0/B" -639.268 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -6600 -460 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_and_0/B" "li_1700_n780#"
+merge "magic_xnor_1/B" "A1" -447.933 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0

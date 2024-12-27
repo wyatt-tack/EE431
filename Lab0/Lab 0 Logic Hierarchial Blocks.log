@@ -1,0 +1,33 @@
+Circuit: * C:\Users\Wyatt\Documents\School\EE431\Lab0\Lab 0 Logic Hierarchial Blocks.asc
+
+Instance "m:x1:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:x1:1": Width narrower than recommended for a level 1 MOSFET.
+Instance "m:x1:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:x1:3": Width narrower than recommended for a level 1 MOSFET.
+Instance "m:x2:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:x2:1": Width narrower than recommended for a level 1 MOSFET.
+Instance "m:x2:3": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:x2:3": Width narrower than recommended for a level 1 MOSFET.
+Instance "m:x3:1": Length shorter than recommended for a level 1 MOSFET.
+Instance "m:x3:1": Width narrower than recommended for a level 1 MOSFET.
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 4 to 4
+
+Date: Wed Oct  2 13:33:33 2024
+Total elapsed time: 0.161 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 3209
+traniter = 3198
+tranpoints = 1236
+accept = 1213
+rejected = 24
+matrix size = 11
+fillins = 0
+solver = Normal
+Avg thread counts: 1.9/3.2/3.2/1.9
+Matrix Compiler1: 558 bytes object code size  0.2/0.3/[0.2]
+Matrix Compiler2: 1.03 KB object code size  0.2/0.3/[0.2]
+

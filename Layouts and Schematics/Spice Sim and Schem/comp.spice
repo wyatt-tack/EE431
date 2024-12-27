@@ -1,0 +1,88 @@
+** sch_path: /home/wyatt/EE431/comp.sch
+**.subckt comp VDD A3 A1 A0 A2 B3 B2 B1 B0 Y VSS
+*.ipin VDD
+*.opin Y
+*.ipin VSS
+*.ipin B0
+*.ipin B1
+*.ipin B2
+*.ipin B3
+*.ipin A0
+*.ipin A1
+*.ipin A2
+*.ipin A3
+x9 VDD net1 net3 m1 VSS and
+x10 VDD net2 net5 net3 VSS and
+x11 VDD net4 Y net5 VSS and
+x1 VDD B3 A3 net4 VSS xnor
+x2 VDD B2 A2 net2 VSS xnor
+x3 VDD B1 A1 net1 VSS xnor
+x4 VDD B0 A0 m1 VSS xnor
+**.ends
+
+* expanding   symbol:  and.sym # of pins=5
+** sym_path: /home/wyatt/EE431/and.sym
+** sch_path: /home/wyatt/EE431/and.sch
+.subckt and VDD A Y B VSS
+*.opin Y
+*.ipin VSS
+*.ipin VDD
+*.ipin A
+*.ipin B
+x1 VDD net1 Y VSS inv
+x2 VDD A net1 B VSS nand
+.ends
+
+
+* expanding   symbol:  xnor.sym # of pins=5
+** sym_path: /home/wyatt/EE431/xnor.sym
+** sch_path: /home/wyatt/EE431/xnor.sch
+.subckt xnor VDD A B Y VSS
+*.ipin VDD
+*.ipin VSS
+*.ipin A
+*.ipin B
+*.opin Y
+x1 VDD A net4 B VSS nand
+x2 VDD A net1 VSS inv
+x3 VDD net4 Y net3 VSS nand
+x4 VDD net2 net3 net1 VSS nand
+x5 VDD B net2 VSS inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/wyatt/EE431/inv.sym
+** sch_path: /home/wyatt/EE431/inv.sch
+.subckt inv VDD X Y GND
+*.ipin X
+*.iopin VDD
+*.iopin GND
+*.opin Y
+XM1 Y X GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y X VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  nand.sym # of pins=5
+** sym_path: /home/wyatt/EE431/nand.sym
+** sch_path: /home/wyatt/EE431/nand.sch
+.subckt nand VDD A Y B VSS
+*.ipin A
+*.ipin B
+*.ipin VSS
+*.opin Y
+*.ipin VDD
+XM1 Y B net1 VSS sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 A VSS VSS sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+.end

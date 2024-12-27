@@ -1,0 +1,23 @@
+Version 4
+SymbolType CELL
+LINE Normal -16 -25 -16 24
+LINE Normal 32 0 -16 -25
+LINE Normal -16 24 32 0
+LINE Normal -48 0 -16 0
+LINE Normal 0 -16 0 -32
+LINE Normal 0 16 0 32
+LINE Normal 45 0 64 0
+CIRCLE Normal 45 -7 32 7
+SYMATTR Value Inverter
+PIN -48 0 NONE 8
+PINATTR PinName In
+PINATTR SpiceOrder 1
+PIN 0 -32 NONE 8
+PINATTR PinName VDD
+PINATTR SpiceOrder 2
+PIN 0 32 NONE 8
+PINATTR PinName VSS
+PINATTR SpiceOrder 3
+PIN 64 0 NONE 8
+PINATTR PinName Out
+PINATTR SpiceOrder 4

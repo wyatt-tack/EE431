@@ -1,0 +1,154 @@
+magic
+tech sky130A
+timestamp 1733182032
+<< poly >>
+rect -70 1310 2940 1330
+rect -70 840 -40 1310
+rect -80 835 -40 840
+rect -80 815 -70 835
+rect -50 815 -40 835
+rect -80 810 -40 815
+rect -15 1265 1960 1285
+rect -15 785 15 1265
+rect -80 780 15 785
+rect -80 760 -70 780
+rect -50 760 15 780
+rect -80 755 15 760
+rect 40 1220 980 1240
+rect 40 730 70 1220
+rect 950 960 980 1220
+rect 1930 960 1960 1265
+rect 2910 960 2940 1310
+rect -80 725 70 730
+rect -80 705 -70 725
+rect -50 705 70 725
+rect -80 700 70 705
+rect 95 930 290 960
+rect 950 930 1260 960
+rect 1930 930 2240 960
+rect 2910 930 3220 960
+rect 95 675 125 930
+rect -80 670 125 675
+rect -80 650 -70 670
+rect -50 650 125 670
+rect -80 645 125 650
+<< polycont >>
+rect -70 815 -50 835
+rect -70 760 -50 780
+rect -70 705 -50 725
+rect -70 650 -50 670
+<< locali >>
+rect -135 1310 2890 1330
+rect -135 1060 -115 1310
+rect -155 1030 -115 1060
+rect -95 1270 1910 1290
+rect -95 1010 -75 1270
+rect -155 980 -75 1010
+rect -55 1230 930 1250
+rect -55 960 -35 1230
+rect -155 930 -35 960
+rect -155 880 0 910
+rect -155 835 -40 840
+rect -155 815 -70 835
+rect -50 815 -40 835
+rect -155 810 -40 815
+rect -155 780 -40 785
+rect -155 760 -70 780
+rect -50 760 -40 780
+rect -155 755 -40 760
+rect -155 725 -40 730
+rect -155 705 -70 725
+rect -50 705 -40 725
+rect -155 700 -40 705
+rect -155 670 -40 675
+rect -155 650 -70 670
+rect -50 650 -40 670
+rect -155 645 -40 650
+rect 850 -360 880 960
+rect 900 910 930 1230
+rect 900 880 980 910
+rect 1830 -20 1860 960
+rect 1880 910 1910 1270
+rect 1880 880 1960 910
+rect 2810 -20 2840 960
+rect 2860 910 2890 1310
+rect 2860 880 2940 910
+rect 3790 -20 3820 960
+rect 940 -40 1860 -20
+rect 1920 -40 2840 -20
+rect 2900 -40 3820 -20
+rect 940 -310 960 -40
+rect 1920 -310 1940 -40
+rect 2900 -310 2920 -40
+rect 940 -340 980 -310
+rect 1920 -340 1985 -310
+rect 2900 -340 2965 -310
+rect 3480 -340 3850 -310
+rect 850 -390 1005 -360
+rect 1495 -390 1970 -360
+rect 2475 -390 2950 -360
+<< metal1 >>
+rect -155 1300 3850 1330
+rect -70 -60 -30 1300
+rect 0 1210 30 1300
+rect 125 1210 155 1300
+rect 1105 1210 1135 1300
+rect 2085 1210 2115 1300
+rect 3790 1210 3820 1300
+rect 0 1180 3820 1210
+rect 0 0 3820 30
+rect -70 -90 3365 -60
+rect 3510 -620 3540 0
+rect -155 -650 3850 -620
+use magic_and  magic_and_0
+timestamp 1731958742
+transform 1 0 980 0 1 -650
+box 0 0 540 590
+use magic_and  magic_and_1
+timestamp 1731958742
+transform 1 0 1960 0 1 -650
+box 0 0 540 590
+use magic_and  magic_and_2
+timestamp 1731958742
+transform 1 0 2940 0 1 -650
+box 0 0 540 590
+use magic_xnor  magic_xnor_0
+timestamp 1732493114
+transform 1 0 500 0 1 620
+box -500 -620 380 590
+use magic_xnor  magic_xnor_1
+timestamp 1732493114
+transform 1 0 1480 0 1 620
+box -500 -620 380 590
+use magic_xnor  magic_xnor_2
+timestamp 1732493114
+transform 1 0 2460 0 1 620
+box -500 -620 380 590
+use magic_xnor  magic_xnor_3
+timestamp 1732493114
+transform 1 0 3440 0 1 620
+box -500 -620 380 590
+<< labels >>
+rlabel locali -155 880 -135 910 7 A0
+port 1 w
+rlabel locali -155 930 -135 960 7 A1
+port 2 w
+rlabel locali -155 980 -135 1010 7 A2
+port 3 w
+rlabel locali -155 1030 -135 1060 7 A3
+port 4 w
+rlabel locali -155 645 -135 675 7 B0
+port 5 w
+rlabel locali -155 700 -135 730 7 B1
+port 6 w
+rlabel locali -155 755 -135 785 7 B2
+port 7 w
+rlabel locali -155 810 -135 840 7 B3
+port 8 w
+rlabel locali 3830 -340 3850 -310 3 Y
+port 9 e
+rlabel metal1 -155 1300 -135 1330 7 VDD
+port 10 w
+rlabel metal1 -155 -650 -135 -620 7 VSS
+port 11 w
+<< end >>

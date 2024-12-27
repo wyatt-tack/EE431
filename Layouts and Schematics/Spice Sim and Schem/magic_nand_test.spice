@@ -1,0 +1,7 @@
+* SPICE3 file created from magic_nand_test.ext - technology: sky130A
+
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+X1 Y B a_100_n230# VSS sky130_fd_pr__nfet_01v8 ad=0.9 pd=4.9 as=0.14665 ps=2.865 w=2 l=0.5
+X2 a_100_n230# a_100_n230# VSS sky130_fd_pr__res_generic_nd w=1.8 l=0
+X3 a_100_n230# A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.14665 pd=2.865 as=0.9 ps=4.9 w=2 l=0.5
+X4 VDD B Y VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5

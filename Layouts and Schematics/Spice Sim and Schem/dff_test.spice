@@ -1,0 +1,18 @@
+** dff_magic.spice
+.lib ~/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include magic_etdff.spice
+Xetdff D clk Q notQ VDD GND magic_etdff
+
+V1 clk GND pulse(0 1.8 2n 0.1n 0.1n 5n 10n)
+V2 VDD GND 1.8
+V3 D GND pulse(0 1.8 5n 0.1n 0.1n 10n 20n)
+.tran 1n 40n
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
+

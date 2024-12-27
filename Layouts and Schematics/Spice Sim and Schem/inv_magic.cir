@@ -1,0 +1,6 @@
+** inv_magic.cir
+.include magic_inv.spice
+Xinv X Y VDD VSS magic_inv
+
+.end
+

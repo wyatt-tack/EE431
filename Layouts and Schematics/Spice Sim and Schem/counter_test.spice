@@ -1,0 +1,17 @@
+** dff_magic.spice
+.lib ~/share/pdk/sky130A/libs.tech/ngspice/sky130.lib.spice tt
+.include magic_counter.spice
+Xcounter clk S0 S1 S2 S3 VDD GND magic_counter
+
+V1 clk GND pulse(0 1.8 2n 0.1n 0.1n 5n 10n)
+V2 VDD GND 1.8
+.tran 1n 400n
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+.GLOBAL GND
+.end
+

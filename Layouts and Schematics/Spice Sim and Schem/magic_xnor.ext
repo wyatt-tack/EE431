@@ -1,0 +1,230 @@
+timestamp 1733183068
+version 8.3
+tech sky130A
+style ngspice()
+scale 1000 1 500000
+resistclasses 4400000 2200000 950000 3050000 120000 197000 114000 191000 120000 197000 114000 191000 48200 319800 2000000 48200 48200 12800 125 125 47 47 29 5
+use magic_nand magic_nand_2 1 0 210 0 1 -920
+use magic_nand magic_nand_1 1 0 -440 0 1 320
+use magic_nand magic_nand_0 1 0 210 0 1 320
+use magic_inv magic_inv_1 1 0 -750 0 1 -920
+use magic_inv magic_inv_0 1 0 -270 0 1 -920
+port "VSS" 5 -1000 -1240 -960 -1180 m1
+port "VDD" 4 -1000 1120 -960 1180 m1
+port "B" 2 -1000 520 -960 580 li
+port "Y" 3 720 620 760 680 li
+port "A" 1 -1000 620 -960 680 li
+node "m1_n740_n1010#" 2 317.403 -740 -1010 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 58200 2060 0 0 0 0 0 0 0 0 0 0
+node "VSS" 1 154.699 -1000 -1240 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 25600 820 0 0 0 0 0 0 0 0 0 0
+node "m1_n550_n120#" 1 162.597 -550 -120 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 40800 1480 0 0 0 0 0 0 0 0 0 0
+node "m1_640_n1240#" 4 565.63 640 -1240 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 58600 2900 0 0 0 0 0 0 0 0 0 0
+node "m1_640_1120#" 0 68.8286 640 1120 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7200 360 0 0 0 0 0 0 0 0 0 0
+node "m1_n60_1120#" 0 40.7529 -60 1120 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 0 0 0 0 0 0 0 0 0 0
+node "VDD" 3 681.605 -1000 1120 m1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 97200 3360 0 0 0 0 0 0 0 0 0 0
+node "li_n620_n1120#" 271 539.285 -620 -1120 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 71600 2580 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_n70_n620#" 21 45.076 -70 -620 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_320_n380#" 176 451.521 320 -380 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 67200 2060 0 0 0 0 0 0 0 0 0 0 0 0
+node "B" 75 118.507 -1000 520 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21000 820 0 0 0 0 0 0 0 0 0 0 0 0
+node "Y" 28 81.1003 720 620 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 7800 380 0 0 0 0 0 0 0 0 0 0 0 0
+node "li_n40_620#" 21 46.0273 -40 620 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 6000 320 0 0 0 0 0 0 0 0 0 0 0 0
+node "A" 75 118.482 -1000 620 li 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 21000 820 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n270_n100#" 114 135.303 -270 -100 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 18800 600 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "a_n750_n130#" 362 357.538 -750 -130 p 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 38600 1220 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_n560_n560#" 1254 990 -560 -560 nw 0 0 0 0 330000 2320 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+node "w_n50_680#" 3654 195 -50 680 nw 0 0 0 0 65000 1260 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+substrate "VSUBS" 0 0 -1073741817 -1073741817 space 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+cap "m1_640_1120#" "w_n50_680#" 0.247042
+cap "li_n70_n620#" "m1_n740_n1010#" 0.68223
+cap "m1_640_1120#" "m1_640_n1240#" 2.77477
+cap "m1_640_n1240#" "li_n620_n1120#" 0.812299
+cap "m1_n550_n120#" "li_320_n380#" 3.41302
+cap "w_n560_n560#" "m1_n740_n1010#" 25.0194
+cap "li_320_n380#" "a_n750_n130#" 0.973843
+cap "VDD" "li_n40_620#" 0.200928
+cap "B" "a_n750_n130#" 0.814973
+cap "li_n40_620#" "A" 2.39812
+cap "li_n40_620#" "Y" 2.55853
+cap "VDD" "w_n560_n560#" 0.17816
+cap "m1_n740_n1010#" "li_n620_n1120#" 184.537
+cap "m1_n550_n120#" "a_n750_n130#" 18.5505
+cap "m1_640_n1240#" "m1_n740_n1010#" 17.6891
+cap "m1_n550_n120#" "m1_n60_1120#" 3.57724
+cap "a_n270_n100#" "w_n560_n560#" 59.5338
+cap "VSS" "li_n620_n1120#" 4.70066
+cap "VDD" "w_n50_680#" 4.44506
+cap "m1_640_1120#" "Y" 0.830186
+cap "VDD" "m1_640_n1240#" 3.75844
+cap "w_n560_n560#" "li_320_n380#" 24.0582
+cap "a_n270_n100#" "li_n620_n1120#" 0.384614
+cap "m1_640_n1240#" "Y" 0.689049
+cap "m1_n550_n120#" "li_n40_620#" 0.308354
+cap "a_n270_n100#" "m1_640_n1240#" 0.706074
+cap "VSS" "m1_n740_n1010#" 25.5269
+cap "m1_n550_n120#" "li_n70_n620#" 0.691822
+cap "li_n40_620#" "m1_n60_1120#" 0.553457
+cap "VDD" "m1_n740_n1010#" 2.5
+cap "m1_n550_n120#" "w_n560_n560#" 93.9569
+cap "A" "m1_n740_n1010#" 0.00789815
+cap "m1_640_n1240#" "li_320_n380#" 6.53215
+cap "w_n560_n560#" "a_n750_n130#" 61.1704
+cap "a_n270_n100#" "m1_n740_n1010#" 0.110225
+cap "A" "VSS" 0.0157963
+cap "m1_n550_n120#" "li_n620_n1120#" 0.721591
+cap "VDD" "A" 43.2748
+cap "a_n750_n130#" "li_n620_n1120#" 0.71186
+cap "VDD" "Y" 0.067313
+cap "m1_n550_n120#" "w_n50_680#" 2.84795
+cap "m1_n60_1120#" "m1_640_1120#" 4.06154
+cap "m1_n550_n120#" "m1_640_n1240#" 4.4
+cap "VDD" "a_n270_n100#" 1.69851
+cap "B" "m1_n740_n1010#" 0.0407787
+cap "m1_640_n1240#" "a_n750_n130#" 0.682062
+cap "m1_n60_1120#" "w_n50_680#" 14.1349
+cap "li_n40_620#" "li_n70_n620#" 1.47765
+cap "li_n40_620#" "w_n560_n560#" 1.9845
+cap "w_n560_n560#" "li_n70_n620#" 13.9281
+cap "VDD" "li_320_n380#" 1.01759
+cap "B" "VSS" 0.0778993
+cap "m1_n550_n120#" "m1_n740_n1010#" 27.5
+cap "VDD" "B" 42.3863
+cap "m1_n740_n1010#" "a_n750_n130#" 0.734835
+cap "a_n270_n100#" "li_320_n380#" 1.55901
+cap "B" "A" 131.25
+cap "li_n40_620#" "w_n50_680#" 13.9281
+cap "li_n70_n620#" "li_n620_n1120#" 16.6703
+cap "VDD" "m1_n550_n120#" 13.8947
+cap "w_n560_n560#" "li_n620_n1120#" 14.9436
+cap "li_n70_n620#" "w_n50_680#" 0.0612454
+cap "li_n70_n620#" "m1_640_n1240#" 0.251812
+cap "VDD" "a_n750_n130#" 25.4638
+cap "w_n560_n560#" "m1_640_n1240#" 16.2669
+cap "VDD" "m1_n60_1120#" 4.32787
+cap "A" "a_n750_n130#" 0.117785
+cap "m1_n550_n120#" "a_n270_n100#" 18.277
+cap "B" "li_320_n380#" 1.53307
+cap "a_n270_n100#" "a_n750_n130#" 26.5985
+cap "magic_nand_0/Y" "magic_nand_2/VDD" 0.0777584
+cap "magic_nand_1/Y" "magic_nand_2/Y" 13.027
+cap "magic_nand_2/VDD" "magic_nand_2/VSS" 456.801
+cap "magic_nand_2/VDD" "magic_nand_2/B" 58.6079
+cap "magic_nand_2/B" "magic_nand_1/B" 49.613
+cap "magic_nand_1/A" "magic_nand_2/B" 14.2679
+cap "magic_nand_2/VSS" "magic_nand_1/B" 19.8466
+cap "magic_nand_2/VSS" "magic_nand_1/A" 42.3179
+cap "magic_nand_1/Y" "magic_nand_2/VDD" 7.62571
+cap "magic_nand_2/Y" "magic_nand_0/a_100_n230#" 8.95068
+cap "magic_nand_2/a_100_n230#" "magic_nand_2/VSS" 3.76241
+cap "magic_nand_2/a_100_n230#" "magic_nand_2/B" 0.317563
+cap "magic_nand_1/Y" "magic_nand_1/B" 1.61341
+cap "magic_nand_2/B" "magic_nand_1/a_100_n230#" 0.170893
+cap "magic_nand_2/VDD" "magic_nand_2/Y" 29.5058
+cap "magic_nand_2/VDD" "magic_nand_0/a_100_n230#" 0.0707928
+cap "magic_nand_2/Y" "magic_nand_1/A" -0.373621
+cap "magic_nand_2/Y" "magic_nand_1/B" -0.695927
+cap "magic_nand_2/VDD" "magic_nand_1/A" 62.407
+cap "magic_nand_2/A" "magic_nand_2/B" 117.423
+cap "magic_nand_2/VSS" "magic_nand_2/A" 9.75532
+cap "magic_nand_2/VDD" "magic_nand_1/B" -23.2452
+cap "magic_nand_1/A" "magic_nand_1/B" 12.2897
+cap "magic_nand_2/VDD" "magic_nand_1/a_100_n230#" 4.42582
+cap "magic_nand_1/Y" "magic_nand_2/A" 19.2404
+cap "magic_nand_0/Y" "magic_nand_2/VSS" -2.49632
+cap "magic_nand_2/VSS" "magic_nand_2/B" 234.687
+cap "magic_nand_1/a_100_n230#" "magic_nand_1/B" 0.14203
+cap "magic_nand_2/Y" "magic_nand_2/A" 13.0033
+cap "magic_nand_1/Y" "magic_nand_2/B" 0.280666
+cap "magic_nand_1/Y" "magic_nand_2/VSS" 15.1552
+cap "magic_nand_2/VDD" "magic_nand_2/A" 68.315
+cap "magic_nand_2/Y" "magic_nand_2/B" 7.05037
+cap "magic_nand_0/Y" "magic_nand_2/Y" 6.01785
+cap "magic_nand_2/VSS" "magic_nand_2/Y" 73.345
+cap "magic_nand_2/A" "magic_nand_1/B" 15.8016
+cap "magic_nand_0/a_100_n230#" "magic_nand_2/B" 0.11361
+cap "magic_nand_2/VSS" "magic_nand_0/a_100_n230#" -10.6434
+cap "magic_nand_2/VSS" "magic_nand_2/B" 39.5057
+cap "magic_nand_1/Y" "magic_nand_0/Y" -1.59613
+cap "magic_nand_2/VDD" "magic_nand_2/VSS" 162.376
+cap "magic_nand_2/A" "magic_nand_2/VDD" -0.684055
+cap "magic_nand_2/Y" "magic_nand_2/VSS" 61.8829
+cap "magic_nand_0/a_100_n230#" "magic_nand_2/Y" 0.14203
+cap "magic_nand_2/A" "magic_nand_2/Y" 0.812102
+cap "magic_nand_0/Y" "magic_nand_2/VDD" 11.3218
+cap "magic_nand_1/B" "magic_nand_2/VSS" 3.13615
+cap "magic_nand_0/Y" "magic_nand_2/Y" 6.63513
+cap "magic_nand_2/A" "magic_nand_2/VSS" 17.2886
+cap "magic_nand_0/Y" "magic_nand_2/VSS" -2.85925
+cap "magic_nand_2/VDD" "magic_nand_2/B" -0.468489
+cap "magic_nand_1/A" "magic_nand_2/VSS" 1.29159
+cap "magic_nand_0/a_100_n230#" "magic_nand_0/Y" -2.3337
+cap "magic_nand_2/Y" "magic_nand_2/B" 13.0708
+cap "magic_nand_2/a_100_n230#" "magic_nand_2/VSS" 8.59419
+cap "magic_nand_2/VDD" "magic_nand_2/Y" 8.15517
+cap "magic_nand_0/a_100_n230#" "magic_nand_2/Y" 29.681
+cap "magic_nand_2/VSS" "magic_nand_1/B" -0.0117701
+cap "magic_nand_2/A" "magic_nand_1/Y" 0.982735
+cap "magic_nand_1/A" "magic_nand_1/Y" -2.39812
+cap "magic_nand_2/VDD" "magic_nand_1/B" 36.0313
+cap "magic_nand_2/B" "magic_nand_2/Y" 0.422185
+cap "magic_nand_1/B" "magic_nand_0/Y" 0.39092
+cap "magic_nand_1/Y" "magic_nand_2/Y" 66.5331
+cap "magic_nand_2/VDD" "magic_nand_1/A" 31.645
+cap "magic_nand_2/VSS" "magic_nand_2/Y" 49.182
+cap "magic_nand_2/VDD" "magic_nand_2/Y" 5.04108
+cap "magic_nand_0/Y" "magic_nand_2/Y" 30.7908
+cap "magic_nand_0/a_100_n230#" "magic_nand_1/Y" 0.0307176
+cap "magic_nand_1/B" "magic_nand_1/A" 4.33004
+cap "magic_nand_1/B" "magic_nand_2/Y" 0.168345
+cap "magic_nand_0/a_100_n230#" "magic_nand_2/VSS" -11.9697
+cap "magic_nand_0/a_100_n230#" "magic_nand_2/VDD" -1.20319
+cap "magic_nand_2/A" "magic_nand_2/Y" 2.64889
+cap "magic_nand_2/VSS" "magic_nand_1/Y" 68.2731
+cap "magic_nand_0/Y" "magic_nand_1/Y" 2.16107
+cap "magic_nand_2/VDD" "magic_nand_1/Y" 3.86903
+cap "magic_nand_1/a_100_n230#" "magic_nand_2/VDD" 5.44895
+cap "magic_nand_1/B" "magic_nand_2/B" 1.56089
+cap "magic_nand_2/VSS" "magic_nand_2/VDD" 41.246
+cap "magic_nand_1/B" "magic_nand_1/Y" 14.3488
+cap "magic_nand_2/VSS" "magic_nand_0/Y" -11.9566
+cap "magic_nand_2/VDD" "magic_nand_0/Y" 2.8652
+cap "magic_nand_0/Y" "magic_nand_2/VDD" 1.10375
+cap "magic_nand_0/Y" "magic_nand_2/B" 0.29073
+cap "magic_nand_0/Y" "magic_nand_0/a_100_n230#" -11.0017
+cap "magic_nand_0/Y" "magic_nand_1/Y" -8.63508
+cap "magic_nand_2/Y" "magic_nand_2/VDD" 0.85513
+cap "magic_nand_2/Y" "magic_nand_2/B" 0.858989
+cap "magic_nand_2/VSS" "magic_nand_2/VDD" 0.198198
+cap "magic_nand_2/Y" "magic_nand_0/Y" 31.2551
+cap "magic_nand_0/Y" "magic_nand_2/VSS" -12.4613
+merge "magic_inv_0/VSS" "magic_inv_1/VSS" -1144.18 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -45000 -2340 0 0 0 0 0 0 0 0 0 0
+merge "magic_inv_1/VSS" "VSS"
+merge "VSS" "magic_nand_0/VSS"
+merge "magic_nand_0/VSS" "magic_nand_1/VSS"
+merge "magic_nand_1/VSS" "magic_nand_2/VSS"
+merge "magic_nand_2/VSS" "VSUBS"
+merge "VSUBS" "m1_640_n1240#"
+merge "m1_640_n1240#" "m1_n740_n1010#"
+merge "magic_nand_0/Y" "Y" -53.2438 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -600 -140 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_inv_0/VDD" "magic_inv_1/VDD" -2292.94 0 0 0 0 -350000 -6400 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -46800 -2520 0 0 0 0 0 0 0 0 0 0
+merge "magic_inv_1/VDD" "magic_nand_2/VDD"
+merge "magic_nand_2/VDD" "m1_n550_n120#"
+merge "m1_n550_n120#" "w_n560_n560#"
+merge "w_n560_n560#" "magic_nand_0/VDD"
+merge "magic_nand_0/VDD" "m1_640_1120#"
+merge "m1_640_1120#" "magic_nand_1/VDD"
+merge "magic_nand_1/VDD" "m1_n60_1120#"
+merge "m1_n60_1120#" "VDD"
+merge "VDD" "w_n50_680#"
+merge "magic_inv_0/X" "magic_nand_1/B" -213.439 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -2000 -440 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_1/B" "B"
+merge "B" "a_n270_n100#"
+merge "magic_inv_0/Y" "magic_nand_2/A" -252.418 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3600 -360 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_2/A" "li_n70_n620#"
+merge "magic_inv_1/X" "magic_nand_1/A" -224.794 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5000 -500 0 0 0 -120 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_1/A" "A"
+merge "A" "a_n750_n130#"
+merge "magic_inv_1/Y" "magic_nand_2/B" -406.882 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -3600 -360 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_2/B" "li_n620_n1120#"
+merge "magic_nand_0/A" "magic_nand_1/Y" -201.199 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -5400 -420 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_1/Y" "li_n40_620#"
+merge "magic_nand_0/B" "magic_nand_2/Y" -463.853 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 -21000 -880 0 0 0 0 0 0 0 0 0 0 0 0
+merge "magic_nand_2/Y" "li_320_n380#"

@@ -1,0 +1,5 @@
+** inv_magic.cir
+.include magic_and.spice
+Xand A B Y VDD VSS magic_and
+.end
+

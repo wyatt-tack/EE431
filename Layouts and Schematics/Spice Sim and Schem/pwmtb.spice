@@ -1,0 +1,173 @@
+** sch_path: /home/wyatt/EE431/pwmtb.sch
+**.subckt pwmtb
+V1 clk GND pulse(0 1.8 3n 0.1n 0.1n 10n 20n)
+V2 net1 GND 1.8
+V4 M2 GND pulse(0 1.8 0n 0.1n 0.1n 1280n 2560n)
+V3 M1 GND pulse(0 1.8 0n 0.1n 0.1n 640n 1280n)
+V5 M0 GND pulse(0 1.8 0n 0.1n 0.1n 320n 640n)
+V6 M3 GND pulse(0 1.8 0n 0.1n 0.1n 2560n 5120n)
+x1 net1 clk PWM M3 M2 M1 M0 GND pwm
+**** begin user architecture code
+ .lib /home/wyatt/share/pdk/sky130A/libs.tech/combined/sky130.lib.spice tt
+
+.include /home/wyatt/EE431
+.tran 1n 4800n
+.control
+run
+.endc
+
+**** end user architecture code
+**.ends
+
+* expanding   symbol:  pwm.sym # of pins=8
+** sym_path: /home/wyatt/EE431/pwm.sym
+** sch_path: /home/wyatt/EE431/pwm.sch
+.subckt pwm VDD clk PWM S3 S2 S1 S0 VSS
+*.ipin VDD
+*.ipin VSS
+*.opin PWM
+*.ipin clk
+*.ipin S3
+*.ipin S2
+*.ipin S1
+*.ipin S0
+x1 VDD net5 net2 clk net5 VSS etdff
+x2 VDD net6 net3 net2 net6 VSS etdff
+x3 VDD net7 net4 net3 net7 VSS etdff
+x4 VDD net8 net1 net4 net8 VSS etdff
+x5 VDD net1 net3 net2 net4 S3 S2 S1 S0 net11 VSS comp
+x6 VDD net1 net14 clk net10 VSS etdff
+x9 VDD PWM net15 net12 PWM VSS etdff
+x10 VDD net9 net12 net13 VSS nand
+x14 VDD net11 net13 clk net16 VSS dff
+x7 VDD net1 net9 net10 VSS nand
+.ends
+
+
+* expanding   symbol:  etdff.sym # of pins=6
+** sym_path: /home/wyatt/EE431/etdff.sym
+** sch_path: /home/wyatt/EE431/etdff.sch
+.subckt etdff VDD D Q clk notQ VSS
+*.ipin VDD
+*.opin Q
+*.opin notQ
+*.ipin VSS
+*.ipin D
+*.ipin clk
+x1 VDD net2 net1 D net4 VSS dff
+x2 VDD net3 Q net1 notQ VSS dff
+x3 VDD net2 net3 VSS inv
+x4 VDD clk net2 VSS inv
+.ends
+
+
+* expanding   symbol:  comp.sym # of pins=11
+** sym_path: /home/wyatt/EE431/comp.sym
+** sch_path: /home/wyatt/EE431/comp.sch
+.subckt comp VDD A3 A1 A0 A2 B3 B2 B1 B0 Y VSS
+*.ipin VDD
+*.opin Y
+*.ipin VSS
+*.ipin B0
+*.ipin B1
+*.ipin B2
+*.ipin B3
+*.ipin A0
+*.ipin A1
+*.ipin A2
+*.ipin A3
+x9 VDD net1 net3 m1 VSS and
+x10 VDD net2 net5 net3 VSS and
+x11 VDD net4 Y net5 VSS and
+x1 VDD B3 A3 net4 VSS xnor
+x2 VDD B2 A2 net2 VSS xnor
+x3 VDD B1 A1 net1 VSS xnor
+x4 VDD B0 A0 m1 VSS xnor
+.ends
+
+
+* expanding   symbol:  nand.sym # of pins=5
+** sym_path: /home/wyatt/EE431/nand.sym
+** sch_path: /home/wyatt/EE431/nand.sch
+.subckt nand VDD A Y B VSS
+*.ipin A
+*.ipin B
+*.ipin VSS
+*.opin Y
+*.ipin VDD
+XM1 Y B net1 VSS sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM3 Y B VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM4 Y A VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 net1 A VSS VSS sky130_fd_pr__nfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  dff.sym # of pins=6
+** sym_path: /home/wyatt/EE431/dff.sym
+** sch_path: /home/wyatt/EE431/dff.sch
+.subckt dff VDD clk Q D notQ VSS
+*.opin Q
+*.opin notQ
+*.ipin D
+*.ipin clk
+*.ipin VDD
+*.ipin VSS
+x1 VDD Q notQ net1 VSS nand
+x2 VDD net2 Q notQ VSS nand
+x3 VDD clk net2 D VSS nand
+x4 VDD net3 net1 clk VSS nand
+x5 VDD D net3 VSS inv
+.ends
+
+
+* expanding   symbol:  inv.sym # of pins=4
+** sym_path: /home/wyatt/EE431/inv.sym
+** sch_path: /home/wyatt/EE431/inv.sch
+.subckt inv VDD X Y GND
+*.ipin X
+*.iopin VDD
+*.iopin GND
+*.opin Y
+XM1 Y X GND GND sky130_fd_pr__nfet_01v8 L=0.5 W=1 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+XM2 Y X VDD VDD sky130_fd_pr__pfet_01v8 L=0.5 W=2 nf=1 ad='int((nf+1)/2) * W/nf * 0.29' as='int((nf+2)/2) * W/nf * 0.29' pd='2*int((nf+1)/2) * (W/nf + 0.29)'
++ ps='2*int((nf+2)/2) * (W/nf + 0.29)' nrd='0.29 / W' nrs='0.29 / W' sa=0 sb=0 sd=0 mult=1 m=1
+.ends
+
+
+* expanding   symbol:  and.sym # of pins=5
+** sym_path: /home/wyatt/EE431/and.sym
+** sch_path: /home/wyatt/EE431/and.sch
+.subckt and VDD A Y B VSS
+*.opin Y
+*.ipin VSS
+*.ipin VDD
+*.ipin A
+*.ipin B
+x1 VDD net1 Y VSS inv
+x2 VDD A net1 B VSS nand
+.ends
+
+
+* expanding   symbol:  xnor.sym # of pins=5
+** sym_path: /home/wyatt/EE431/xnor.sym
+** sch_path: /home/wyatt/EE431/xnor.sch
+.subckt xnor VDD A B Y VSS
+*.ipin VDD
+*.ipin VSS
+*.ipin A
+*.ipin B
+*.opin Y
+x1 VDD A net4 B VSS nand
+x2 VDD A net1 VSS inv
+x3 VDD net4 Y net3 VSS nand
+x4 VDD net2 net3 net1 VSS nand
+x5 VDD B net2 VSS inv
+.ends
+
+.GLOBAL GND
+.end

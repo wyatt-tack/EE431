@@ -1,0 +1,41 @@
+* SPICE3 file created from magic_etdff.ext - technology: sky130A
+
+.subckt magic_nand A B Y VDD VSS
+X0 Y A VDD VDD sky130_fd_pr__pfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X1 Y B a_100_n230# VSS sky130_fd_pr__nfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+X2 a_100_n230# A VSS VSS sky130_fd_pr__nfet_01v8 ad=0.5 pd=2.5 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=20000,500
+X3 VDD B Y VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.5 ps=2.5 w=2 l=0.5
+**devattr s=20000,500 d=36000,980
+.ends
+
+.subckt magic_inv X Y VDD VSS
+X0 Y X VDD VDD sky130_fd_pr__pfet_01v8 ad=0.9 pd=4.9 as=0.9 ps=4.9 w=2 l=0.5
+**devattr s=36000,980 d=36000,980
+X1 Y X VSS VSS sky130_fd_pr__nfet_01v8 ad=0.45 pd=2.9 as=0.45 ps=2.9 w=1 l=0.5
+**devattr s=18000,580 d=18000,580
+.ends
+
+.subckt magic_dff D clk Q notQ VDD VSS
+Xmagic_nand_0 magic_nand_3/Y notQ Q VDD VSS magic_nand
+Xmagic_nand_1 Q magic_nand_2/Y notQ VDD VSS magic_nand
+Xmagic_nand_2 magic_inv_0/Y clk magic_nand_2/Y VDD VSS magic_nand
+Xmagic_nand_3 clk D magic_nand_3/Y VDD VSS magic_nand
+Xmagic_inv_0 D magic_inv_0/Y VDD VSS magic_inv
+C0 VDD VSS 6.870138f
+C1 clk VSS 3.249527f
+.ends
+
+.subckt magic_etdff D clk Q notQ VDD VSS
+Xmagic_dff_0 D magic_inv_1/X magic_dff_1/D magic_dff_0/notQ VDD VSS magic_dff
+Xmagic_dff_1 magic_dff_1/D magic_inv_1/Y Q notQ VDD VSS magic_dff
+Xmagic_inv_0 clk magic_inv_1/X VDD VSS magic_inv
+Xmagic_inv_1 magic_inv_1/X magic_inv_1/Y VDD VSS magic_inv
+C0 magic_inv_1/X VSS 3.219988f
+C1 VDD VSS 14.160234f
+C2 magic_inv_1/Y VSS 4.860871f
+C3 magic_dff_1/D VSS 2.570121f
+.ends
+
